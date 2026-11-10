@@ -72,9 +72,9 @@ def evolucion_gasto(df_mes: pd.DataFrame, periodo: str, limite_total: float, hoy
     base = alt.Chart(datos).encode(
         x=alt.X("dia:Q", title="Día del mes", scale=alt.Scale(domain=[1, dias_mes]),
                 axis=alt.Axis(tickMinStep=1, grid=False)),
+        # Eje en pesos completos con punto de miles: $500.000
         y=alt.Y("monto:Q", title=None, axis=alt.Axis(tickCount=4, labelExpr=(
-                    "datum.value >= 1e6 ? '$' + format(datum.value / 1e6, '.1~f') + ' M' : "
-                    "'$' + format(datum.value / 1e3, ',.0f') + ' mil'"))),
+                    "'$' + join(split(format(datum.value, ',.0f'), ','), '.')"))),
         color=alt.Color("serie:N", scale=escala, legend=alt.Legend(title=None, orient="top")),
         strokeDash=alt.condition(alt.datum.serie == "Ritmo del presupuesto",
                                  alt.value([5, 4]), alt.value([1, 0])),

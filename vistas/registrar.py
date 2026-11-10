@@ -36,7 +36,8 @@ def formulario():
     defecto = b.get("fecha_hora") or datos.ahora().replace(second=0, microsecond=0)
     errores = st.session_state.pop("errores_registro", {})
 
-    with st.form("nuevo_movimiento", border=True):
+    # Sin st.form: así el valor en pesos se actualiza apenas escribes el monto
+    with st.container(border=True, key="card_registro"):
         tipo = st.segmented_control("Tipo", ["Gasto", "Ingreso"], default=b.get("tipo", "Gasto"),
                                     required=True, width="stretch", label_visibility="collapsed",
                                     format_func=lambda t: f"− {t}" if t == "Gasto" else f"+ {t}")
@@ -44,6 +45,8 @@ def formulario():
                                 placeholder="Ej: 15000", icon=":material/attach_money:")
         if "monto" in errores:
             st.caption(f":red[{errores['monto']}]")
+        elif monto:
+            ui.valor_exacto(monto, tipo or "Gasto")
         descripcion = st.text_input("Descripción", value=b.get("descripcion", ""),
                                     placeholder="Ej: almuerzo corrientazo, Uber a la casa, tinto",
                                     icon=":material/edit_note:")
@@ -54,8 +57,8 @@ def formulario():
             f1, f2 = st.columns(2)
             fecha = f1.date_input("Fecha", value=defecto.date(), format="DD/MM/YYYY")
             hora = f2.time_input("Hora", value=defecto.time())
-        enviado = st.form_submit_button("Continuar", type="primary", icon=":material/auto_awesome:",
-                                        width="stretch")
+        enviado = st.button("Continuar", type="primary", icon=":material/auto_awesome:",
+                            width="stretch")
 
     if enviado:
         errores = {}

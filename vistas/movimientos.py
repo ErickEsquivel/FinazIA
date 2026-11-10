@@ -26,6 +26,7 @@ def editar(mov):
             f'{ui.esc(ui.con_icono(mov["categoria_ia"]))} ({mov["confianza"]:.0%})</div>')
     descripcion = st.text_input("Descripción", value=mov["descripcion"])
     monto = st.number_input("Monto ($ COP)", min_value=0, step=1_000, value=int(mov["monto"]))
+    ui.valor_exacto(monto, mov["tipo_movimiento"])
     c1, c2 = st.columns(2)
     fecha = c1.date_input("Fecha", value=mov["fecha_hora"].date(), format="DD/MM/YYYY")
     hora = c2.time_input("Hora", value=mov["fecha_hora"].time())
@@ -158,6 +159,8 @@ if modo == "Lista":
 else:
     tabla = vista[["id", "fecha_hora", "descripcion", "monto", "tipo_movimiento",
                    "categoria_ia", "confianza", "categoria_final", "atipico"]].copy()
+    # Monto como texto con separador de miles ($15.000); no se edita desde la tabla
+    tabla["monto"] = tabla["monto"].map(an.pesos)
     tabla["eliminar"] = False
     editada = st.data_editor(
         tabla, hide_index=True, width="stretch",
@@ -167,7 +170,7 @@ else:
             "id": None,
             "fecha_hora": st.column_config.DatetimeColumn("Fecha", format="DD/MM/YYYY HH:mm"),
             "descripcion": "Descripción",
-            "monto": st.column_config.NumberColumn("Monto", format="$ %d"),
+            "monto": st.column_config.TextColumn("Monto"),
             "tipo_movimiento": "Tipo",
             "categoria_ia": "Propuesta IA",
             "confianza": st.column_config.ProgressColumn("Confianza", min_value=0, max_value=1,

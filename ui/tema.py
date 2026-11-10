@@ -77,6 +77,9 @@ h1 {{ font-weight: 700; letter-spacing: -0.02em; }}
 .fz-ingreso {{ color: var(--fz-verde); }}
 .fz-grande {{ font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }}
 
+/* Valor exacto en pesos bajo los campos numéricos */
+.fz-exacto {{ font-size: 0.9rem; opacity: 0.85; margin-top: -0.6rem; font-variant-numeric: tabular-nums; }}
+
 /* ---------- Barras de presupuesto ---------- */
 .fz-barra {{ margin: 0 0 0.9rem; }}
 .fz-barra .cab {{ display: flex; justify-content: space-between; gap: 0.5rem; font-size: 0.9rem; }}

@@ -24,6 +24,7 @@ with izq, st.container(border=True, key="card_limites"):
     st.session_state.setdefault("pr_ingreso", int(bd.ingreso_mensual()))
     ingreso = st.number_input("Ingreso mensual aproximado ($ COP)", min_value=0, step=50_000,
                               key="pr_ingreso", icon=":material/payments:")
+    ui.valor_exacto(ingreso, "Ingreso")
     limites = ui.formulario_limites("pr", ingreso, presupuestos)
 
     hay_cambios = (ingreso != int(bd.ingreso_mensual())

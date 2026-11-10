@@ -75,6 +75,12 @@ def icono_redondo(categoria) -> str:
     return f'<span class="fz-ico" style="background:{c}22">{icono(categoria)}</span>'
 
 
+def valor_exacto(valor, tipo=None):
+    """Muestra bajo un campo numérico el valor con separador de miles: 1500000 -> $1.500.000 COP."""
+    color = {"Gasto": "var(--fz-rojo)", "Ingreso": "var(--fz-verde)"}.get(tipo, "inherit")
+    st.html(f'<div class="fz-exacto">= <b style="color:{color}">{an.pesos(valor or 0)}</b> COP</div>')
+
+
 def chip(categoria) -> str:
     c = color(categoria)
     return (f'<span class="fz-chip" style="border-color:{c}66;background:{c}1A">'
@@ -206,10 +212,12 @@ def formulario_limites(prefijo, ingreso, iniciales: dict) -> dict:
     columnas = st.columns(2)
     limites = {}
     for i, cat in enumerate(bd.CATEGORIAS_GASTO):
-        limites[cat] = columnas[i % 2].number_input(
-            con_icono(cat), min_value=0, step=10_000, key=f"{prefijo}_{cat}",
-            help=f"Sugerido: {bd.PORCENTAJE_SUGERIDO[cat]:.0%} del ingreso",
-        )
+        with columnas[i % 2]:
+            limites[cat] = st.number_input(
+                con_icono(cat), min_value=0, step=10_000, key=f"{prefijo}_{cat}",
+                help=f"Sugerido: {bd.PORCENTAJE_SUGERIDO[cat]:.0%} del ingreso",
+            )
+            valor_exacto(limites[cat])
 
     total = sum(limites.values())
     libre = ingreso - total
