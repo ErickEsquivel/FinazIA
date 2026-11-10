@@ -41,12 +41,9 @@ def formulario():
         tipo = st.segmented_control("Tipo", ["Gasto", "Ingreso"], default=b.get("tipo", "Gasto"),
                                     required=True, width="stretch", label_visibility="collapsed",
                                     format_func=lambda t: f"− {t}" if t == "Gasto" else f"+ {t}")
-        monto = st.number_input("Monto ($ COP)", min_value=0, step=1_000, value=b.get("monto"),
-                                placeholder="Ej: 15000", icon=":material/attach_money:")
+        monto = ui.campo_pesos("Monto ($ COP)", "monto", b.get("monto"))
         if "monto" in errores:
             st.caption(f":red[{errores['monto']}]")
-        elif monto:
-            ui.valor_exacto(monto, tipo or "Gasto")
         descripcion = st.text_input("Descripción", value=b.get("descripcion", ""),
                                     placeholder="Ej: almuerzo corrientazo, Uber a la casa, tinto",
                                     icon=":material/edit_note:")

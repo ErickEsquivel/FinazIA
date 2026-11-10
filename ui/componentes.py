@@ -6,6 +6,7 @@ barras de presupuesto, selector de mes, mensajes y el formulario de límites.
 """
 
 import html
+import re
 
 import pandas as pd
 import streamlit as st
@@ -75,10 +76,38 @@ def icono_redondo(categoria) -> str:
     return f'<span class="fz-ico" style="background:{c}22">{icono(categoria)}</span>'
 
 
-def valor_exacto(valor, tipo=None):
-    """Muestra bajo un campo numérico el valor con separador de miles: 1500000 -> $1.500.000 COP."""
-    color = {"Gasto": "var(--fz-rojo)", "Ingreso": "var(--fz-verde)"}.get(tipo, "inherit")
-    st.html(f'<div class="fz-exacto">= <b style="color:{color}">{an.pesos(valor or 0)}</b> COP</div>')
+# ----------------------------------------------------------------------------
+# Campo de pesos: muestra 1.250.000 dentro del mismo campo mientras se escribe.
+# El formateo en vivo lo hace el script de ui/tema.py sobre los campos cuya
+# clave empieza por "pesos_"; aquí se convierte el texto de vuelta a número.
+# ----------------------------------------------------------------------------
+def formato_miles(valor) -> str:
+    """1250000 -> '1.250.000'; None o vacío -> ''."""
+    return "" if valor in (None, "") else f"{int(valor):,}".replace(",", ".")
+
+
+def leer_pesos(texto):
+    """'1.250.000' -> 1250000. Ignora lo que vaya después de una coma (centavos)."""
+    digitos = re.sub(r"\D", "", str(texto or "").split(",")[0])
+    return int(digitos) if digitos else None
+
+
+def clave_pesos(clave) -> str:
+    return f"pesos_{clave}"
+
+
+def fijar_pesos(clave, valor):
+    st.session_state[clave_pesos(clave)] = formato_miles(valor)
+
+
+def campo_pesos(etiqueta, clave, valor=None, placeholder="Ej: 15.000", ayuda=None):
+    """Campo de texto para montos en pesos. Devuelve un entero o None si está vacío."""
+    k = clave_pesos(clave)
+    # Normaliza antes de dibujar el campo (por si se pegó texto o el script no corrió)
+    st.session_state[k] = formato_miles(leer_pesos(st.session_state[k] if k in st.session_state else valor))
+    texto = st.text_input(etiqueta, key=k, placeholder=placeholder, help=ayuda,
+                          icon=":material/attach_money:")
+    return leer_pesos(texto)
 
 
 def chip(categoria) -> str:
@@ -202,22 +231,18 @@ def sugeridos(ingreso) -> dict:
 
 def aplicar_sugeridos(prefijo, ingreso, valores=None):
     for cat, valor in (valores or sugeridos(ingreso)).items():
-        st.session_state[f"{prefijo}_{cat}"] = int(valor)
+        fijar_pesos(f"{prefijo}_{cat}", valor)
 
 
 def formulario_limites(prefijo, ingreso, iniciales: dict) -> dict:
-    for cat in bd.CATEGORIAS_GASTO:
-        st.session_state.setdefault(f"{prefijo}_{cat}", int(iniciales.get(cat, 0)))
-
     columnas = st.columns(2)
     limites = {}
     for i, cat in enumerate(bd.CATEGORIAS_GASTO):
         with columnas[i % 2]:
-            limites[cat] = st.number_input(
-                con_icono(cat), min_value=0, step=10_000, key=f"{prefijo}_{cat}",
-                help=f"Sugerido: {bd.PORCENTAJE_SUGERIDO[cat]:.0%} del ingreso",
-            )
-            valor_exacto(limites[cat])
+            limites[cat] = campo_pesos(
+                con_icono(cat), f"{prefijo}_{cat}", int(iniciales.get(cat, 0)), placeholder="0",
+                ayuda=f"Sugerido: {bd.PORCENTAJE_SUGERIDO[cat]:.0%} del ingreso",
+            ) or 0
 
     total = sum(limites.values())
     libre = ingreso - total

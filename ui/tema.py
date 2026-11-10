@@ -77,8 +77,12 @@ h1 {{ font-weight: 700; letter-spacing: -0.02em; }}
 .fz-ingreso {{ color: var(--fz-verde); }}
 .fz-grande {{ font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }}
 
-/* Valor exacto en pesos bajo los campos numéricos */
-.fz-exacto {{ font-size: 0.9rem; opacity: 0.85; margin-top: -0.6rem; font-variant-numeric: tabular-nums; }}
+/* Contenedor invisible del script de formateo */
+.st-key-fz_js {{ display: none; }}
+
+/* Campos de pesos: números alineados y un poco más grandes */
+[class*="st-key-pesos_"] input {{ font-variant-numeric: tabular-nums; font-weight: 600; }}
+[class*="st-key-pesos_"] [data-testid="InputInstructions"] {{ display: none; }}
 
 /* ---------- Barras de presupuesto ---------- */
 .fz-barra {{ margin: 0 0 0.9rem; }}
@@ -131,5 +135,49 @@ h1 {{ font-weight: 700; letter-spacing: -0.02em; }}
 """
 
 
+# Formatea en vivo los campos de pesos (clave "pesos_..."): 1250000 -> 1.250.000.
+# Escucha en fase de captura sobre el documento, antes que React, así Streamlit
+# recibe ya el texto con puntos. Mantiene el cursor en el mismo dígito.
+_JS_PESOS = """
+<script>
+(function () {
+  if (window.__fzPesos) return;
+  window.__fzPesos = true;
+  var SEL = '[class*="st-key-pesos_"] input';
+  var setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;
+
+  function formatear(texto) {
+    var digitos = texto.split(',')[0].replace(/\\D/g, '').replace(/^0+(?=\\d)/, '');
+    return digitos.replace(/\\B(?=(\\d{3})+(?!\\d))/g, '.');
+  }
+
+  document.addEventListener('input', function (e) {
+    var el = e.target;
+    if (!el.matches || !el.matches(SEL)) return;
+    var pos = el.selectionStart || 0;
+    var antes = el.value.slice(0, pos).replace(/\\D/g, '').length;
+    var nuevo = formatear(el.value);
+    if (nuevo === el.value) return;
+    setter.call(el, nuevo);
+    var i = 0, n = 0;
+    while (i < nuevo.length && n < antes) { if (/\\d/.test(nuevo[i])) n++; i++; }
+    el.setSelectionRange(i, i);
+  }, true);
+
+  // Teclado numérico en el celular
+  function marcar() {
+    document.querySelectorAll(SEL).forEach(function (el) {
+      if (el.getAttribute('inputmode') !== 'numeric') el.setAttribute('inputmode', 'numeric');
+    });
+  }
+  marcar();
+  new MutationObserver(marcar).observe(document.body, { childList: true, subtree: true });
+})();
+</script>
+"""
+
+
 def aplicar_estilos():
     st.html(_CSS)
+    with st.container(key="fz_js"):
+        st.html(_JS_PESOS, unsafe_allow_javascript=True)

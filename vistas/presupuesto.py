@@ -21,10 +21,8 @@ izq, der = st.columns([3, 2], gap="medium")
 # ----------------------------------------------------------------------------
 with izq, st.container(border=True, key="card_limites"):
     ui.titulo_tarjeta("Límite mensual por categoría")
-    st.session_state.setdefault("pr_ingreso", int(bd.ingreso_mensual()))
-    ingreso = st.number_input("Ingreso mensual aproximado ($ COP)", min_value=0, step=50_000,
-                              key="pr_ingreso", icon=":material/payments:")
-    ui.valor_exacto(ingreso, "Ingreso")
+    ingreso = ui.campo_pesos("Ingreso mensual aproximado ($ COP)", "pr_ingreso",
+                             int(bd.ingreso_mensual()), placeholder="Ej: 1.500.000") or 0
     limites = ui.formulario_limites("pr", ingreso, presupuestos)
 
     hay_cambios = (ingreso != int(bd.ingreso_mensual())

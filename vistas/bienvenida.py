@@ -29,10 +29,10 @@ with st.container(key="centrado_bienvenida"):
                        "Puedes cambiarlo cuando quieras.")
             # El valor se guarda aparte porque Streamlit borra el estado de los
             # widgets que dejan de mostrarse (al pasar al siguiente paso).
-            ingreso = st.number_input("Ingreso mensual aproximado ($ COP)", min_value=0, step=50_000,
-                                      value=st.session_state.get("bv_ingreso", 1_500_000))
+            ingreso = ui.campo_pesos("Ingreso mensual aproximado ($ COP)", "bv_ingreso",
+                                     st.session_state.get("bv_ingreso", 1_500_000),
+                                     placeholder="Ej: 1.500.000") or 0
             st.session_state.bv_ingreso = ingreso
-            ui.valor_exacto(ingreso, "Ingreso")
             if ingreso <= 0:
                 st.caption(":orange[Escribe un valor mayor que cero para sugerirte límites.]")
             if st.button("Continuar", type="primary", icon=":material/arrow_forward:",

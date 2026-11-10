@@ -25,8 +25,7 @@ def editar(mov):
     st.html(f'<div class="fz-muted">{mov["tipo_movimiento"]} · la IA propuso '
             f'{ui.esc(ui.con_icono(mov["categoria_ia"]))} ({mov["confianza"]:.0%})</div>')
     descripcion = st.text_input("Descripción", value=mov["descripcion"])
-    monto = st.number_input("Monto ($ COP)", min_value=0, step=1_000, value=int(mov["monto"]))
-    ui.valor_exacto(monto, mov["tipo_movimiento"])
+    monto = ui.campo_pesos("Monto ($ COP)", f"editar_{mov['id']}", int(mov["monto"])) or 0
     c1, c2 = st.columns(2)
     fecha = c1.date_input("Fecha", value=mov["fecha_hora"].date(), format="DD/MM/YYYY")
     hora = c2.time_input("Hora", value=mov["fecha_hora"].time())
