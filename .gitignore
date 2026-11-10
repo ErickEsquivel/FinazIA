@@ -2,3 +2,5 @@ finanzia.db
 __pycache__/
 *.pyc
 .venv/
+notebooks/*.pkl
+.claude/

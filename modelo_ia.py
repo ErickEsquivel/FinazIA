@@ -5,22 +5,22 @@ Aquí vive la IA. Este archivo:
 
 1. Carga el modelo entrenado (ia_clasificadora_multivariable_knn.pkl).
 2. Predice la categoría de un movimiento nuevo y dice qué tan segura está.
-3. Muestra los 5 "vecinos" (movimientos parecidos) que usó para decidir.
-4. Detecta si el movimiento es inusual comparando su monto con el de esos vecinos.
+3. Muestra los K "vecinos" (movimientos parecidos) que usó para decidir (K = 5).
+4. Detecta si el movimiento es inusual comparando su monto con el de los 5
+   movimientos con la descripción más parecida (vecinos buscados solo por
+   texto y tipo, para que el monto no "se esconda" entre montos parecidos).
 5. Aprende de los movimientos que el usuario confirma o corrige, sin reentrenar
    todo desde cero (KNN es un "aprendiz perezoso": basta con agregar los
    puntos nuevos al mapa).
 """
 
-import re
 import sys
-import unicodedata
 
 import joblib
 import numpy as np
 import pandas as pd
 import scipy.sparse as sp
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neighbors import KNeighborsClassifier, NearestNeighbors
 
 from base_datos import CATEGORIAS_GASTO
 
@@ -29,20 +29,27 @@ from base_datos import CATEGORIAS_GASTO
 UMBRAL_CONFIANZA = 0.60
 
 # Un gasto se marca como inusual si su monto es al menos 4 veces la mediana
-# de los montos de sus 5 vecinos (y la diferencia supera $20.000).
+# de los montos de los 5 movimientos con descripción más parecida
+# (y la diferencia supera $20.000).
 VECES_MAYOR = 4
 DIFERENCIA_MINIMA = 20_000
 # ... o si es 20 veces menor (por ejemplo, olvidó escribir ceros).
 VECES_MENOR = 20
+# Cuántos movimientos parecidos se usan para comparar el monto
+VECINOS_INUSUAL = 5
+# Solo se juzga el monto si al menos 4 de esos 5 movimientos son de la misma
+# categoría (si no coinciden, no sabe con qué comparar y prefiere no alertar).
+# Ver notebooks/FinanzIA_analisis_modelo.ipynb, sección 4.5.
+MINIMO_ACUERDO = 4
 
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 
 
 # ----------------------------------------------------------------------------
-# 1. La función que usaron en el notebook para desglosar la fecha.
+# 1. La función que usamos en el notebook para desglosar la fecha
+#    (notebooks/FinanzIA_analisis_modelo.ipynb, sección 1).
 #    El .pkl NO guarda el código de esta función, solo su nombre, así que hay
-#    que volver a definirla con el mismo nombre y el mismo resultado.
-#    (Se reconstruyó revisando los datos guardados dentro del modelo.)
+#    que volver a definirla aquí con el mismo nombre y el mismo resultado.
 # ----------------------------------------------------------------------------
 def extraer_variables_temporales(X):
     """Convierte la columna fecha_hora en 4 números: hora, día de la semana,
@@ -65,21 +72,13 @@ def cargar_pipeline(ruta_modelo):
     return joblib.load(ruta_modelo)
 
 
-def quitar_tildes(texto: str) -> str:
-    """'Odontología' -> 'odontologia', 'año' -> 'ano'."""
-    descompuesto = unicodedata.normalize("NFKD", texto.lower())
-    return "".join(c for c in descompuesto if not unicodedata.combining(c))
-
-
-def _a_tabla(fechas, montos, tipos, descripciones, normalizar=lambda t: t):
-    """Arma la tabla con las 4 columnas exactas que espera el modelo.
-    `normalizar` corrige la descripción (por ejemplo, las tildes) antes de que
-    la vea el modelo; lo que se guarda en la base de datos no cambia."""
+def _a_tabla(fechas, montos, tipos, descripciones):
+    """Arma la tabla con las 4 columnas exactas que espera el modelo."""
     return pd.DataFrame({
         "fecha_hora": [pd.Timestamp(f).strftime("%Y-%m-%d %H:%M:%S") for f in fechas],
         "monto": [float(m) for m in montos],
         "tipo_movimiento": list(tipos),
-        "descripcion_libre": [normalizar(" ".join(str(d).split())) for d in descripciones],
+        "descripcion_libre": [" ".join(str(d).split()) for d in descripciones],
     })
 
 
@@ -101,38 +100,21 @@ class MotorIA:
         tfidf = self.preprocesador.named_transformers_["texto"]
         self.vocabulario = tfidf.get_feature_names_out()
         self.col_texto = self.X_base.shape[1] - len(self.vocabulario)  # = 6
-        self._preparar_tildes(tfidf)
         pesos = self.preprocesador.transformer_weights
         self.peso_tiempo, self.peso_monto, self.peso_tipo = pesos["tiempo"], pesos["numero"], pesos["tipo"]
         self.esc_tiempo = self.preprocesador.named_transformers_["tiempo"].named_steps["escalador_tiempo"]
         self.esc_monto = self.preprocesador.named_transformers_["numero"]
 
+        # Montos reales de los puntos de entrenamiento (para detectar inusuales)
+        self.montos_base = (self.X_base[:, 4].toarray().ravel() / self.peso_monto
+                            * self.esc_monto.scale_[0] + self.esc_monto.mean_[0])
+        # Máscara que apaga las columnas de tiempo (0-3) y monto (4): deja tipo y texto
+        mascara = np.ones(self.X_base.shape[1]); mascara[:5] = 0
+        self.solo_texto_y_tipo = sp.diags(mascara)
+
         # Movimientos del usuario que ya forman parte del "mapa"
         self.mov_usuario = pd.DataFrame()
         self.version = None
-
-    # ------------------------------------------------------------------
-    # Tildes: el TF-IDF se entrenó sin quitar tildes, así que "cafe" y "café"
-    # son palabras distintas para él. En vez de reentrenar, se "traduce" cada
-    # palabra que el modelo no conoce a la forma que sí conoce.
-    # ------------------------------------------------------------------
-    def _preparar_tildes(self, tfidf):
-        self._palabras_conocidas = set(tfidf.vocabulary_)
-        candidatas = {}  # "cafe" -> [(idf, "café"), ...]
-        for palabra, j in tfidf.vocabulary_.items():
-            if " " not in palabra:  # solo palabras sueltas; los bigramas se arman solos
-                candidatas.setdefault(quitar_tildes(palabra), []).append((tfidf.idf_[j], palabra))
-        # Si varias palabras quedan iguales sin tilde, se usa la más común (menor idf)
-        self._sin_tilde_a_vocabulario = {clave: min(opciones)[1] for clave, opciones in candidatas.items()}
-
-    def normalizar_descripcion(self, texto: str) -> str:
-        """'pague cafe en la cafeteria' -> 'pague café en la cafetería' (según el vocabulario)."""
-        def reemplazar(m):
-            palabra = m.group(0).lower()
-            if palabra in self._palabras_conocidas:
-                return palabra
-            return self._sin_tilde_a_vocabulario.get(quitar_tildes(palabra), palabra)
-        return re.sub(r"\w+", reemplazar, texto)
 
     # ------------------------------------------------------------------
     # Aprendizaje: agrega al mapa los movimientos confirmados por el usuario
@@ -142,17 +124,24 @@ class MotorIA:
             return  # nada cambió desde la última vez
         if movimientos.empty:
             X, y = self.X_base, self.y_base
+            montos = self.montos_base
             self.mov_usuario = pd.DataFrame()
         else:
             movimientos = movimientos.reset_index(drop=True)
             tabla = _a_tabla(movimientos["fecha_hora"], movimientos["monto"],
-                             movimientos["tipo_movimiento"], movimientos["descripcion"],
-                             self.normalizar_descripcion)
+                             movimientos["tipo_movimiento"], movimientos["descripcion"])
             X_usuario = sp.csr_matrix(self.preprocesador.transform(tabla))
             X = sp.vstack([self.X_base, X_usuario]).tocsr()
             y = np.concatenate([self.y_base, movimientos["categoria_final"].to_numpy()])
+            montos = np.concatenate([self.montos_base, movimientos["monto"].to_numpy(dtype=float)])
             self.mov_usuario = movimientos
+        # Clasificador: todas las variables
         self.knn = KNeighborsClassifier(**self.parametros_knn).fit(X, y)
+        # Buscador de inusuales: solo texto y tipo
+        self.vecinos_monto = NearestNeighbors(n_neighbors=min(VECINOS_INUSUAL, X.shape[0])).fit(
+            X @ self.solo_texto_y_tipo)
+        self.montos = montos
+        self.etiquetas = np.asarray(y)
         self.version = version
 
     @property
@@ -163,10 +152,10 @@ class MotorIA:
     # Predicción
     # ------------------------------------------------------------------
     def predecir(self, fecha_hora, monto, tipo, descripcion) -> dict:
-        tabla = _a_tabla([fecha_hora], [monto], [tipo], [descripcion], self.normalizar_descripcion)
+        tabla = _a_tabla([fecha_hora], [monto], [tipo], [descripcion])
         x = sp.csr_matrix(self.preprocesador.transform(tabla))
 
-        # Votos de los 5 vecinos (pesados por cercanía) para cada categoría
+        # Votos de los K vecinos (pesados por cercanía) para cada categoría
         probabilidades = dict(zip(self.knn.classes_, self.knn.predict_proba(x)[0]))
 
         # Un ingreso solo puede ser "Ingresos" y un gasto nunca puede serlo
@@ -182,7 +171,12 @@ class MotorIA:
         texto = x[:, self.col_texto:]
         palabras = [self.vocabulario[j] for j in texto.indices if " " not in self.vocabulario[j]]
 
-        atipico, motivos = self._revisar_atipico(monto, vecinos, len(palabras) > 0)
+        indices_monto = self.vecinos_monto.kneighbors(x @ self.solo_texto_y_tipo, return_distance=False)[0]
+        clases_parecidos = pd.Series(self.etiquetas[indices_monto])
+        clase_comun, veces = clases_parecidos.value_counts().index[0], clases_parecidos.value_counts().iloc[0]
+        montos_parecidos = self.montos[indices_monto][self.etiquetas[indices_monto] == clase_comun]
+        atipico, motivos = self._revisar_atipico(monto, montos_parecidos, len(palabras) > 0,
+                                                 veces >= MINIMO_ACUERDO)
 
         return {
             "categoria": sugerida,
@@ -235,19 +229,21 @@ class MotorIA:
     # ------------------------------------------------------------------
     # Idea 4: ¿el movimiento es inusual?
     # ------------------------------------------------------------------
-    def _revisar_atipico(self, monto, vecinos, texto_conocido):
+    def _revisar_atipico(self, monto, montos_parecidos, texto_conocido, hay_parecidos):
+        # montos_parecidos: los de los movimientos con descripción parecida y de la misma categoría
         motivos = []
-        mediana = float(np.median([v["monto"] for v in vecinos]))
-        if mediana > 0:
+        mediana = float(np.median(montos_parecidos))
+        # Solo compara montos si conoce movimientos con una descripción realmente parecida
+        if texto_conocido and hay_parecidos and mediana > 0:
             veces = monto / mediana
             if veces >= VECES_MAYOR and monto - mediana >= DIFERENCIA_MINIMA:
                 motivos.append(
-                    f"El monto es {veces:.0f} veces mayor que el de los movimientos más "
-                    f"parecidos (mediana ${mediana:,.0f}).".replace(",", ".")
+                    f"El monto es {veces:.0f} veces mayor que el de los movimientos con "
+                    f"descripción parecida (mediana ${mediana:,.0f}).".replace(",", ".")
                 )
             elif veces <= 1 / VECES_MENOR:
                 motivos.append(
-                    f"El monto es mucho menor que el de los movimientos parecidos "
+                    f"El monto es mucho menor que el de los movimientos con descripción parecida "
                     f"(mediana ${mediana:,.0f}). ¿Te faltaron ceros?".replace(",", ".")
                 )
         if not texto_conocido:

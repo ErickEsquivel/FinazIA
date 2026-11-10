@@ -126,8 +126,9 @@ def revisar(p):
             st.button("Cancelar", icon=":material/close:", on_click=limpiar, type="tertiary")
 
     with st.expander("🔍 ¿Por qué esta categoría?"):
-        st.caption("La IA busca los 5 movimientos más parecidos (por palabras, monto y hora) "
-                   "y vota con ellos; los más parecidos pesan más.")
+        st.caption(f"La IA busca los {len(r['vecinos'])} movimientos más parecidos (por palabras, "
+                   "tipo, monto y hora) y vota con ellos; los más parecidos pesan más. Para avisar "
+                   "de un monto inusual lo compara con movimientos de descripción parecida.")
         if r["palabras_reconocidas"]:
             st.markdown("Palabras que reconoció: " + " ".join(f"`{w}`" for w in r["palabras_reconocidas"]))
         filas = []

@@ -1,0 +1,701 @@
+﻿fecha_hora,monto,tipo_movimiento,descripcion_libre,categoria
+2026-05-01 09:21:22,135000,Gasto,Factura de energía Enel Codensa,Vivienda y Servicios
+2026-05-01 21:19:16,19000,Gasto,Alitas y pola con los de la U,Ocio y Entretenimiento
+2026-05-02 08:52:07,906500,Gasto,Cuota de arriendo habitación por PSE,Vivienda y Servicios
+2026-05-02 09:18:17,99000,Gasto,Factura plan móvil Tigo con Nequi,Vivienda y Servicios
+2026-05-02 10:49:30,41000,Gasto,Transferencia pago fijo del mes,Vivienda y Servicios
+2026-05-02 15:19:01,94000,Gasto,Recibo de internet Movistar hoy,Vivienda y Servicios
+2026-05-02 17:32:36,8100,Gasto,empanada y gaseosa en la esquina hoy,Gastos Hormiga
+2026-05-02 20:20:42,107000,Gasto,Pago cuenta en el bar con Nequi hoy,Ocio y Entretenimiento
+2026-05-03 08:56:15,95500,Gasto,Plan de datos celular WOM,Vivienda y Servicios
+2026-05-03 09:39:40,1112500,Gasto,Pago parcial créditos universidad,Salud y Educación
+2026-05-03 09:39:56,79500,Gasto,Mensualidad del gimnasio Smart Fit pago rápido,Salud y Educación
+2026-05-03 10:53:09,7300,Gasto,botella de agua en la calle hoy,Gastos Hormiga
+2026-05-03 11:34:28,533000,Gasto,materiales para entrega de semestre,Salud y Educación
+2026-05-03 19:46:43,109000,Gasto,salida a comer crepes & waffles,Ocio y Entretenimiento
+2026-05-04 08:23:40,68000,Gasto,cambio de aceite moto,Transporte
+2026-05-04 11:18:26,56500,Gasto,plan de datos celular wom en efectivo,Vivienda y Servicios
+2026-05-05 07:49:27,28500,Gasto,Uber hacia la universidad por lluvia por PSE,Transporte
+2026-05-05 08:12:57,66500,Gasto,internet hogar claro fibra óptica hoy,Vivienda y Servicios
+2026-05-05 09:19:53,36500,Gasto,Curso online en Udemy por PSE,Salud y Educación
+2026-05-05 09:24:55,85000,Gasto,Recibo de internet Movistar por PSE,Vivienda y Servicios
+2026-05-05 10:42:09,673000,Ingreso,Devolución de la vaca por Nequi con Nequi,Ingresos
+2026-05-05 11:01:17,673000,Gasto,Cuota de arriendo habitación hoy,Vivienda y Servicios
+2026-05-05 15:23:37,24500,Gasto,Crema dental y shampoo en Farmatodo,Salud y Educación
+2026-05-05 15:49:26,43000,Ingreso,Me pagaron plata que me debían por Daviplata,Ingresos
+2026-05-05 15:53:23,681000,Ingreso,bono o comisión extra de trabajo,Ingresos
+2026-05-05 15:57:51,8000,Gasto,Fotocopias e impresiones trabajo de la U en efectivo,Salud y Educación
+2026-05-05 16:27:38,71000,Gasto,consulta odontología particular,Salud y Educación
+2026-05-05 16:38:46,68500,Gasto,Plan de datos celular WOM,Vivienda y Servicios
+2026-05-05 16:51:18,137500,Gasto,pago administración conjunto con nequi,Vivienda y Servicios
+2026-05-05 17:28:40,876000,Ingreso,Venta de artículo usado por Marketplace por PSE,Ingresos
+2026-05-05 17:50:22,1302500,Ingreso,Deposito recibido en cuenta pago rapido,Ingresos
+2026-05-05 18:21:57,74500,Ingreso,Mesada semanal transferencia Bancolombia con Nequi,Ingresos
+2026-05-08 03:41:58,30000,Gasto,alitas y pola con los de la u en efectivo,Ocio y Entretenimiento
+2026-05-08 07:37:30,15000,Gasto,Pago transporte regreso hoy,Transporte
+2026-05-08 08:17:54,91500,Gasto,acetaminofén y antigripal en cruz verde con nequi,Salud y Educación
+2026-05-08 10:24:49,18000,Gasto,Cuota moderadora cita medica EPS,Salud y Educación
+2026-05-08 18:17:31,15000,Gasto,Almuerzo corrientazo cerca a la U con Nequi,Alimentación
+2026-05-08 22:22:44,63000,Gasto,Pago cuenta en el bar con Nequi con Nequi,Ocio y Entretenimiento
+2026-05-09 07:21:36,41000,Gasto,Cambio de aceite moto hoy,Transporte
+2026-05-09 09:50:50,4400,Gasto,antojo rápido en la esquina en efectivo,Gastos Hormiga
+2026-05-09 13:30:20,268000,Gasto,Compra pago con Nequi en efectivo,Alimentación
+2026-05-09 14:16:22,38500,Gasto,medicamentos en droguería la rebaja en efectivo,Salud y Educación
+2026-05-09 17:15:25,2200,Gasto,papas margarita y chocolatina jet en oxxo con nequi,Gastos Hormiga
+2026-05-09 19:11:29,67000,Gasto,arroz aceite y granos en ara con nequi,Alimentación
+2026-05-10 14:04:32,26000,Ingreso,Pago de quincena nómina por PSE,Ingresos
+2026-05-11 07:09:17,114500,Gasto,Mercado quincenal en el D1,Alimentación
+2026-05-12 07:48:02,65500,Gasto,Gasolina para el carro en Terpel por PSE,Transporte
+2026-05-12 17:07:06,2000,Gasto,antojo rápido en la esquina,Gastos Hormiga
+2026-05-12 19:01:23,216500,Gasto,Leche queso y jamon en el D1,Alimentación
+2026-05-13 07:42:10,155500,Gasto,Mercado Olímpica,Alimentación
+2026-05-13 08:57:22,55000,Gasto,Cuadernos esferos y carpeta en Panamericana,Salud y Educación
+2026-05-13 10:56:45,10800,Gasto,DeTodito y jugo Hit en la tienda con Nequi,Gastos Hormiga
+2026-05-13 16:18:42,5000,Gasto,Chocoramo y pony malta,Gastos Hormiga
+2026-05-14 15:03:42,94000,Gasto,cuadernos esferos y carpeta en panamericana hoy,Salud y Educación
+2026-05-15 09:16:47,110000,Gasto,Transferencia pago fijo del mes,Vivienda y Servicios
+2026-05-15 09:42:59,90500,Gasto,Recibo del agua Acueducto,Vivienda y Servicios
+2026-05-15 10:34:58,129000,Gasto,Internet hogar Claro fibra óptica,Vivienda y Servicios
+2026-05-15 15:44:03,520000,Ingreso,Transferencia recibida en Nequi,Ingresos
+2026-05-15 15:54:54,928000,Gasto,Materiales para entrega de semestre,Salud y Educación
+2026-05-15 16:47:31,119000,Gasto,Compra de jabón en polvo y aseo casa en efectivo,Vivienda y Servicios
+2026-05-15 16:55:58,1249500,Ingreso,Clases particulares de cálculo y física hoy,Ingresos
+2026-05-15 17:57:37,9500,Gasto,Tinto y pan de bono a media mañana hoy,Gastos Hormiga
+2026-05-15 19:47:55,96500,Gasto,Alitas y pola con los de la U,Ocio y Entretenimiento
+2026-05-15 21:17:51,69000,Gasto,Tanqueada de la moto gasolina corriente,Transporte
+2026-05-16 09:28:37,132000,Gasto,Plan de datos celular WOM,Vivienda y Servicios
+2026-05-16 09:30:07,116000,Gasto,Transferencia pago fijo del mes pago rapido,Vivienda y Servicios
+2026-05-16 10:02:59,66500,Gasto,implementos de estudio y salud en efectivo,Salud y Educación
+2026-05-16 10:52:48,770500,Ingreso,Pago de soporte técnico y mantenimiento PC,Ingresos
+2026-05-16 11:27:09,83000,Gasto,Internet hogar Claro fibra óptica,Vivienda y Servicios
+2026-05-16 14:29:41,1236500,Ingreso,Me pagaron plata que me debían por Daviplata,Ingresos
+2026-05-16 15:43:24,8700,Gasto,Propina rapida monedas con Nequi,Gastos Hormiga
+2026-05-16 16:52:43,7100,Gasto,Gasto suelto en la tienda en efectivo,Gastos Hormiga
+2026-05-17 00:43:57,60500,Gasto,Helado en Popsy el domingo pago rapido,Ocio y Entretenimiento
+2026-05-17 03:22:15,80500,Gasto,Pago cuenta en el bar con Nequi,Ocio y Entretenimiento
+2026-05-17 19:10:58,178000,Gasto,compras del mes en ara con nequi,Alimentación
+2026-05-17 20:12:51,53500,Gasto,boletas de cine colombia y crispetas,Ocio y Entretenimiento
+2026-05-17 20:41:18,42500,Gasto,Cervezas en BBC el viernes en efectivo,Ocio y Entretenimiento
+2026-05-17 22:03:21,31500,Gasto,Recarga rápida en taquilla por PSE,Transporte
+2026-05-18 07:30:03,115000,Gasto,Leche queso y jamón en el D1 en efectivo,Alimentación
+2026-05-18 11:26:43,1500,Gasto,DeTodito y jugo Hit en la tienda hoy,Gastos Hormiga
+2026-05-19 08:28:44,36500,Gasto,Viaje rápido por aplicación en efectivo,Transporte
+2026-05-19 16:04:31,7700,Gasto,Gaseosa Coca Cola personal tienda por PSE,Gastos Hormiga
+2026-05-19 16:08:27,10600,Gasto,gasto suelto en la tienda,Gastos Hormiga
+2026-05-20 10:44:45,1470500,Ingreso,Mesada semanal transferencia Bancolombia hoy,Ingresos
+2026-05-20 11:42:03,325000,Ingreso,Transferencia Nequi apoyo mensual papás en efectivo,Ingresos
+2026-05-20 15:30:52,23000,Gasto,cuadernos esferos y carpeta en panamericana,Salud y Educación
+2026-05-20 16:18:19,836000,Gasto,Materiales para entrega de semestre,Salud y Educación
+2026-05-20 16:23:15,65500,Gasto,Compra en droguería turno,Salud y Educación
+2026-05-20 16:37:28,8700,Gasto,café latte en tostao en efectivo,Gastos Hormiga
+2026-05-20 17:44:58,77000,Ingreso,Devolución de la vaca por Nequi,Ingresos
+2026-05-20 18:55:38,1200500,Ingreso,Plata que me enviaron hoy por PSE,Ingresos
+2026-05-21 10:45:57,5700,Gasto,Gaseosa Coca Cola personal tienda pago rápido,Gastos Hormiga
+2026-05-21 15:36:04,8500,Gasto,gasto suelto en la tienda,Gastos Hormiga
+2026-05-21 17:26:35,5700,Gasto,Compra pequeña en efectivo,Gastos Hormiga
+2026-05-21 17:35:52,83500,Gasto,curso online en udemy con nequi,Salud y Educación
+2026-05-21 18:56:52,9800,Gasto,Pago de parqueadero centro comercial por PSE,Transporte
+2026-05-22 12:05:19,181000,Gasto,Mercado en el Exito,Alimentación
+2026-05-22 14:27:08,91000,Gasto,Cuadernos esferos y carpeta en Panamericana por PSE,Salud y Educación
+2026-05-22 17:40:04,10100,Gasto,Cuota moderadora cita médica EPS hoy,Salud y Educación
+2026-05-23 00:15:34,95000,Gasto,Rumba y cover en Chapinero,Ocio y Entretenimiento
+2026-05-23 01:22:55,97000,Gasto,Rumba y cover en Chapinero,Ocio y Entretenimiento
+2026-05-23 08:34:19,25000,Gasto,Pago transporte regreso hoy,Transporte
+2026-05-24 08:54:26,33500,Gasto,Picap moto rápido para llegar a clase por PSE,Transporte
+2026-05-24 09:42:31,69000,Gasto,Cuadernos esferos y carpeta en Panamericana,Salud y Educación
+2026-05-25 13:21:48,13500,Gasto,Desayuno caldo y arepa en panadería en efectivo,Alimentación
+2026-05-26 10:46:26,10900,Gasto,Algo de tomar y mecato,Gastos Hormiga
+2026-05-26 11:58:59,8500,Gasto,Tinto en Juan Valdez,Gastos Hormiga
+2026-05-28 06:28:35,25000,Gasto,Peaje salida de Bogotá en efectivo,Transporte
+2026-05-28 09:18:05,789500,Ingreso,clases particulares de cálculo y física en efectivo,Ingresos
+2026-05-28 10:35:48,553500,Ingreso,pago de quincena nómina en efectivo,Ingresos
+2026-05-28 10:42:59,8800,Gasto,Dulces y chicles en la chaza de la U en efectivo,Gastos Hormiga
+2026-05-28 14:13:25,71500,Gasto,compra en droguería turno pago rápido,Salud y Educación
+2026-05-28 14:16:35,532000,Ingreso,Me pagaron plata que me debian por Daviplata con Nequi,Ingresos
+2026-05-28 15:55:49,42000,Gasto,cuadernos esferos y carpeta en panamericana,Salud y Educación
+2026-05-28 17:16:42,757000,Ingreso,Venta de artículo usado por Marketplace con Nequi,Ingresos
+2026-05-29 18:08:41,19500,Gasto,Desayuno caldo y arepa en panaderia pago rapido,Alimentación
+2026-05-29 22:07:55,3900,Gasto,pago de parqueadero centro comercial,Transporte
+2026-05-30 07:14:30,112500,Gasto,mercado quincenal en el d1 hoy,Alimentación
+2026-05-30 10:06:50,418000,Ingreso,Pago de quincena nómina por PSE,Ingresos
+2026-05-30 16:18:36,44500,Gasto,compra de jabón en polvo y aseo casa,Vivienda y Servicios
+2026-05-30 16:29:17,41500,Gasto,factura plan móvil tigo hoy,Vivienda y Servicios
+2026-06-01 07:40:25,24000,Gasto,Almuerzo menú del día pago rápido,Alimentación
+2026-06-01 09:10:28,131000,Gasto,Factura de gas natural Vanti,Vivienda y Servicios
+2026-06-01 10:05:17,96500,Gasto,Recibo de internet Movistar pago rápido,Vivienda y Servicios
+2026-06-01 10:27:07,1161500,Ingreso,Pago por proyecto freelance de programacion por PSE,Ingresos
+2026-06-01 10:58:50,116000,Gasto,Pago administracion conjunto en efectivo,Vivienda y Servicios
+2026-06-01 13:29:48,256500,Gasto,Carne y pollo en la fama del barrio hoy,Alimentación
+2026-06-01 14:13:33,694000,Ingreso,Me pagaron plata que me debian por Daviplata,Ingresos
+2026-06-01 15:01:44,7700,Gasto,Tinto y pan de bono a media mañana hoy,Gastos Hormiga
+2026-06-01 15:42:31,1366000,Ingreso,me pagaron plata que me debían por daviplata,Ingresos
+2026-06-01 16:06:46,1181000,Gasto,Pago de arriendo apartamento por PSE,Vivienda y Servicios
+2026-06-01 16:28:46,61500,Gasto,Transferencia pago fijo del mes con Nequi,Vivienda y Servicios
+2026-06-01 17:47:19,917500,Ingreso,Bono o comisión extra de trabajo por PSE,Ingresos
+2026-06-02 14:21:47,254000,Gasto,Compra pago con Nequi pago rápido,Alimentación
+2026-06-02 15:59:57,108000,Gasto,Recibo de internet Movistar pago rápido,Vivienda y Servicios
+2026-06-02 19:57:29,274500,Gasto,arroz aceite y granos en ara,Alimentación
+2026-06-03 06:24:20,20500,Gasto,Didi de regreso a la casa por PSE,Transporte
+2026-06-03 08:56:19,137500,Gasto,compra del día cerca a la u,Alimentación
+2026-06-03 16:47:44,838500,Gasto,Pago de arriendo apartamento con Nequi,Vivienda y Servicios
+2026-06-03 17:53:39,47500,Gasto,Impresión de póster académico y anillado,Salud y Educación
+2026-06-04 09:02:51,114500,Gasto,Recibo de internet Movistar,Vivienda y Servicios
+2026-06-04 10:21:01,60500,Gasto,pago mensual obligatorio por pse,Vivienda y Servicios
+2026-06-04 15:44:55,83500,Gasto,Arreglo enchufe y bombillos,Vivienda y Servicios
+2026-06-04 20:59:12,64000,Gasto,Pago mensualidad Netflix pago rápido,Ocio y Entretenimiento
+2026-06-05 00:28:43,60500,Gasto,vaca para asado donde un amigo por pse,Ocio y Entretenimiento
+2026-06-05 02:14:31,75000,Gasto,Suscripción mensual de Spotify por PSE,Ocio y Entretenimiento
+2026-06-05 03:55:21,60000,Gasto,pago mensualidad netflix pago rápido,Ocio y Entretenimiento
+2026-06-05 15:07:54,1167500,Ingreso,Pago de quincena nómina con Nequi,Ingresos
+2026-06-05 15:09:46,236500,Ingreso,Clases particulares de cálculo y física con Nequi,Ingresos
+2026-06-05 16:14:41,6900,Gasto,botella de agua en la calle pago rápido,Gastos Hormiga
+2026-06-05 19:19:59,22500,Gasto,boletas de cine colombia y crispetas pago rápido,Ocio y Entretenimiento
+2026-06-05 19:27:21,108000,Gasto,Gasto salida sábado en la noche por PSE,Ocio y Entretenimiento
+2026-06-05 23:48:59,100000,Gasto,Salida a comer Crepes & Waffles,Ocio y Entretenimiento
+2026-06-06 00:08:28,105000,Gasto,Alitas y pola con los de la U,Ocio y Entretenimiento
+2026-06-06 08:45:06,29000,Gasto,cuadernos esferos y carpeta en panamericana en efectivo,Salud y Educación
+2026-06-06 19:34:12,24500,Gasto,Desayuno caldo y arepa en panadería,Alimentación
+2026-06-06 21:07:30,84000,Gasto,alitas y pola con los de la u,Ocio y Entretenimiento
+2026-06-07 07:35:47,23500,Gasto,Didi de regreso a la casa por PSE,Transporte
+2026-06-07 09:00:44,85500,Gasto,compra en droguería turno,Salud y Educación
+2026-06-07 10:33:03,22500,Gasto,Impresión de póster académico y anillado,Salud y Educación
+2026-06-09 17:30:50,10800,Gasto,Café latte en Tostao,Gastos Hormiga
+2026-06-09 22:28:17,36500,Gasto,Gasolina para el carro en Terpel por PSE,Transporte
+2026-06-10 10:51:52,751500,Gasto,Materiales para entrega de semestre con Nequi,Salud y Educación
+2026-06-10 11:47:08,9600,Gasto,Algo de tomar y mecato,Gastos Hormiga
+2026-06-10 15:40:43,129000,Ingreso,Anticipo desarrollo aplicación web hoy,Ingresos
+2026-06-11 14:09:11,199500,Gasto,Arroz aceite y granos en Ara por PSE,Alimentación
+2026-06-11 15:08:47,1159500,Gasto,Pago parcial créditos universidad,Salud y Educación
+2026-06-11 21:49:07,21500,Gasto,didi de regreso a la casa,Transporte
+2026-06-12 09:18:29,90500,Gasto,implementos de estudio y salud,Salud y Educación
+2026-06-12 16:47:31,5000,Gasto,Oblea con arequipe en el parque,Gastos Hormiga
+2026-06-12 17:50:13,5900,Gasto,Tinto y pan de bono a media mañana por PSE,Gastos Hormiga
+2026-06-12 19:49:10,85500,Gasto,Rumba y cover en Chapinero,Ocio y Entretenimiento
+2026-06-12 19:52:35,11700,Gasto,Pago de parqueadero centro comercial,Transporte
+2026-06-13 01:01:35,93000,Gasto,boletas de cine colombia y crispetas,Ocio y Entretenimiento
+2026-06-13 07:20:20,64500,Gasto,Cambio de aceite moto,Transporte
+2026-06-13 09:14:27,7900,Gasto,Oblea con arequipe en el parque,Gastos Hormiga
+2026-06-13 14:48:03,107000,Gasto,Medicamentos en Droguería La Rebaja,Salud y Educación
+2026-06-13 19:48:35,106500,Gasto,Combo hamburguesa en El Corral con amigos en efectivo,Ocio y Entretenimiento
+2026-06-14 00:44:23,63500,Gasto,Pago cuenta en el bar con Nequi,Ocio y Entretenimiento
+2026-06-14 07:01:19,16500,Gasto,desayuno caldo y arepa en panadería hoy,Alimentación
+2026-06-14 07:15:36,55000,Gasto,Cambio de aceite moto,Transporte
+2026-06-14 07:33:51,24500,Gasto,pan y huevos para el desayuno en efectivo,Alimentación
+2026-06-14 10:14:09,5900,Gasto,Compra pequeña en efectivo,Gastos Hormiga
+2026-06-14 10:41:01,9900,Gasto,mecato media tarde,Gastos Hormiga
+2026-06-14 19:33:02,11800,Gasto,Almuerzo menú del día,Alimentación
+2026-06-15 09:16:04,46500,Ingreso,Plata que me enviaron hoy,Ingresos
+2026-06-15 10:44:10,181500,Ingreso,Pago monitoria academica universidad con Nequi,Ingresos
+2026-06-15 16:08:05,69000,Gasto,transferencia pago fijo del mes pago rápido,Vivienda y Servicios
+2026-06-15 16:35:03,268500,Ingreso,Transferencia Nequi apoyo mensual papás con Nequi,Ingresos
+2026-06-15 18:38:44,51500,Ingreso,Bono o comisión extra de trabajo,Ingresos
+2026-06-16 08:12:26,97500,Gasto,Verduras y frutas en el fruver,Alimentación
+2026-06-16 15:06:21,310000,Ingreso,Anticipo desarrollo aplicación web con Nequi,Ingresos
+2026-06-16 17:52:01,7000,Gasto,parqueadero cerca a la u,Transporte
+2026-06-17 17:05:16,10600,Gasto,Cuota moderadora cita médica EPS pago rápido,Salud y Educación
+2026-06-18 01:13:24,46000,Gasto,Helado en Popsy el domingo hoy,Ocio y Entretenimiento
+2026-06-18 07:49:48,29000,Gasto,Recarga tarjeta TuLlave Transmilenio pago rapido,Transporte
+2026-06-18 10:39:39,6100,Gasto,Compra pequeña en efectivo por PSE,Gastos Hormiga
+2026-06-19 09:11:09,76000,Gasto,Acetaminofén y antigripal en Cruz Verde,Salud y Educación
+2026-06-19 14:02:24,58500,Gasto,cuadernos esferos y carpeta en panamericana,Salud y Educación
+2026-06-20 02:26:04,18000,Gasto,gasto salida sábado en la noche,Ocio y Entretenimiento
+2026-06-20 08:02:49,52500,Gasto,Acetaminofén y antigripal en Cruz Verde con Nequi,Salud y Educación
+2026-06-20 10:11:59,99500,Gasto,Impresion de poster academico y anillado,Salud y Educación
+2026-06-20 22:43:34,89000,Gasto,Suscripcion mensual de Spotify con Nequi,Ocio y Entretenimiento
+2026-06-21 03:20:26,21500,Gasto,Suscripción mensual de Spotify en efectivo,Ocio y Entretenimiento
+2026-06-21 06:37:58,21500,Gasto,recarga tarjeta tullave transmilenio pago rápido,Transporte
+2026-06-21 10:10:02,8900,Gasto,Oblea con arequipe en el parque por PSE,Gastos Hormiga
+2026-06-21 11:51:43,4800,Gasto,Buñuelo y avena fría con Nequi,Gastos Hormiga
+2026-06-21 15:09:37,6400,Gasto,Fotocopias e impresiones trabajo de la U por PSE,Salud y Educación
+2026-06-21 18:45:39,23000,Gasto,Almuerzo menú del día con Nequi,Alimentación
+2026-06-21 19:12:20,96500,Gasto,Compra del dia cerca a la U en efectivo,Alimentación
+2026-06-22 07:09:21,13000,Gasto,Almuerzo corrientazo cerca a la U,Alimentación
+2026-06-22 08:11:08,13000,Gasto,Cabify al trabajo,Transporte
+2026-06-22 17:32:31,15500,Gasto,didi de regreso a la casa en efectivo,Transporte
+2026-06-23 07:24:06,19000,Gasto,Almuerzo menu del dia,Alimentación
+2026-06-23 11:38:53,1171000,Gasto,Materiales para entrega de semestre por PSE,Salud y Educación
+2026-06-24 20:49:36,106500,Gasto,cervezas en bbc el viernes,Ocio y Entretenimiento
+2026-06-24 21:42:55,84500,Gasto,Boletas de Cine Colombia y crispetas por PSE,Ocio y Entretenimiento
+2026-06-25 13:47:04,17000,Gasto,desayuno caldo y arepa en panadería pago rápido,Alimentación
+2026-06-26 01:50:42,104000,Gasto,Compra fin de semana noche en efectivo,Ocio y Entretenimiento
+2026-06-26 09:57:27,6500,Gasto,tinto en juan valdez,Gastos Hormiga
+2026-06-26 12:30:42,107000,Gasto,Carne y pollo en la fama del barrio en efectivo,Alimentación
+2026-06-27 00:01:26,17000,Gasto,Combo hamburguesa en El Corral con amigos pago rápido,Ocio y Entretenimiento
+2026-06-27 15:02:06,5800,Gasto,Antojo rápido en la esquina hoy,Gastos Hormiga
+2026-06-27 17:24:27,4400,Gasto,Papas Margarita y chocolatina Jet en Oxxo,Gastos Hormiga
+2026-06-28 10:38:33,2300,Gasto,DeTodito y jugo Hit en la tienda en efectivo,Gastos Hormiga
+2026-06-28 15:27:37,118500,Gasto,Factura de gas natural Vanti con Nequi,Vivienda y Servicios
+2026-06-28 15:41:45,6400,Gasto,tinto en juan valdez pago rápido,Gastos Hormiga
+2026-06-28 23:17:48,25500,Gasto,Helado en Popsy el domingo,Ocio y Entretenimiento
+2026-06-29 09:11:26,102000,Gasto,Compra de jabón en polvo y aseo casa,Vivienda y Servicios
+2026-06-29 09:39:40,4500,Gasto,Arepita con queso en la calle pago rápido,Gastos Hormiga
+2026-06-30 06:55:31,25500,Gasto,taxi carrera mínima con nequi,Transporte
+2026-06-30 07:21:01,76500,Gasto,Gasolina para el carro en Terpel,Transporte
+2026-06-30 10:25:13,224500,Ingreso,Mesada semanal transferencia Bancolombia en efectivo,Ingresos
+2026-06-30 12:38:04,23000,Gasto,pan y huevos para el desayuno,Alimentación
+2026-06-30 15:01:14,769500,Ingreso,Me pagaron plata que me debían por Daviplata por PSE,Ingresos
+2026-06-30 16:36:27,36000,Ingreso,pago monitoría académica universidad,Ingresos
+2026-06-30 16:48:06,2400,Gasto,Antojo rápido en la esquina con Nequi,Gastos Hormiga
+2026-06-30 17:01:11,1511000,Ingreso,Clases particulares de cálculo y física por PSE,Ingresos
+2026-06-30 17:09:52,1559000,Ingreso,Venta de artículo usado por Marketplace hoy,Ingresos
+2026-06-30 17:24:29,5100,Gasto,Gasto suelto en la tienda,Gastos Hormiga
+2026-06-30 18:57:01,961000,Ingreso,pago monitoría académica universidad,Ingresos
+2026-06-30 21:25:18,3700,Gasto,Pago de parqueadero centro comercial hoy,Transporte
+2026-07-01 08:18:09,58000,Gasto,Internet hogar Claro fibra óptica hoy,Vivienda y Servicios
+2026-07-01 09:23:05,942000,Ingreso,pago monitoría académica universidad,Ingresos
+2026-07-01 11:50:56,5400,Gasto,Antojo rápido en la esquina,Gastos Hormiga
+2026-07-01 14:37:05,102000,Gasto,Compra en droguería turno,Salud y Educación
+2026-07-01 16:50:46,127000,Gasto,pago administración conjunto pago rápido,Vivienda y Servicios
+2026-07-01 16:59:40,10000,Gasto,Oblea con arequipe en el parque,Gastos Hormiga
+2026-07-01 20:01:14,64000,Gasto,Helado en Popsy el domingo,Ocio y Entretenimiento
+2026-07-01 22:48:32,32000,Gasto,Carrera hacia la casa,Transporte
+2026-07-02 08:36:34,32000,Gasto,peaje salida de bogotá pago rápido,Transporte
+2026-07-02 08:40:33,615500,Gasto,pago parcial créditos universidad con nequi,Salud y Educación
+2026-07-02 10:08:03,40000,Gasto,Factura de energía Enel Codensa con Nequi,Vivienda y Servicios
+2026-07-02 10:45:35,89500,Gasto,Factura de energía Enel Codensa,Vivienda y Servicios
+2026-07-02 15:17:22,44000,Gasto,Cuadernos esferos y carpeta en Panamericana por PSE,Salud y Educación
+2026-07-02 15:47:05,132000,Gasto,Compra de jabón en polvo y aseo casa con Nequi,Vivienda y Servicios
+2026-07-03 03:08:24,91000,Gasto,Transferencia para la vaca del viernes,Ocio y Entretenimiento
+2026-07-03 10:53:15,63000,Gasto,plan de datos celular wom con nequi,Vivienda y Servicios
+2026-07-03 11:09:17,113500,Gasto,Recibo mensual pagado por Nequi con Nequi,Vivienda y Servicios
+2026-07-04 08:44:23,8200,Gasto,Parqueadero cerca a la U con Nequi,Transporte
+2026-07-04 09:19:57,109000,Gasto,Impresión de póster académico y anillado pago rápido,Salud y Educación
+2026-07-04 11:07:12,10900,Gasto,Buñuelo y avena fría por PSE,Gastos Hormiga
+2026-07-04 14:56:29,14000,Gasto,fotocopias e impresiones trabajo de la u,Salud y Educación
+2026-07-04 15:00:14,89000,Gasto,compra de jabón en polvo y aseo casa por pse,Vivienda y Servicios
+2026-07-05 00:50:12,90000,Gasto,Pago mensualidad Netflix por PSE,Ocio y Entretenimiento
+2026-07-05 01:23:01,27500,Gasto,Salida a comer Crepes & Waffles,Ocio y Entretenimiento
+2026-07-05 06:51:06,17500,Gasto,Picap moto rápido para llegar a clase con Nequi,Transporte
+2026-07-05 10:08:19,141500,Gasto,pago administración conjunto en efectivo,Vivienda y Servicios
+2026-07-05 11:02:18,38500,Gasto,recibo mensual pagado por nequi por pse,Vivienda y Servicios
+2026-07-05 16:20:08,1551000,Ingreso,devolución de la vaca por nequi pago rápido,Ingresos
+2026-07-05 17:04:00,1424500,Ingreso,Transferencia Nequi apoyo mensual papas,Ingresos
+2026-07-05 17:48:13,199000,Ingreso,Mesada semanal transferencia Bancolombia hoy,Ingresos
+2026-07-05 23:48:17,35000,Gasto,Boletas de Cine Colombia y crispetas,Ocio y Entretenimiento
+2026-07-06 21:33:20,19500,Gasto,InDrive al centro con Nequi,Transporte
+2026-07-07 07:41:52,20500,Gasto,Pan y huevos para el desayuno en efectivo,Alimentación
+2026-07-07 13:50:20,116500,Gasto,Leche queso y jamon en el D1 por PSE,Alimentación
+2026-07-07 14:43:21,265000,Gasto,Verduras y frutas en el fruver,Alimentación
+2026-07-07 14:45:19,100500,Gasto,Crema dental y shampoo en Farmatodo,Salud y Educación
+2026-07-07 15:20:26,92500,Gasto,Crema dental y shampoo en Farmatodo en efectivo,Salud y Educación
+2026-07-08 14:19:18,271000,Gasto,Compra del día cerca a la U por PSE,Alimentación
+2026-07-08 17:17:15,32000,Gasto,Gasolina para el carro en Terpel,Transporte
+2026-07-08 17:44:00,6400,Gasto,Algo de tomar y mecato,Gastos Hormiga
+2026-07-08 19:33:02,11300,Gasto,Pedido domicilio almuerzo en efectivo,Alimentación
+2026-07-08 21:42:52,14000,Gasto,Recarga tarjeta SITP en efectivo,Transporte
+2026-07-09 22:33:16,25000,Gasto,Recarga rápida en taquilla hoy,Transporte
+2026-07-10 09:49:08,9300,Gasto,Perro caliente callejero,Gastos Hormiga
+2026-07-10 11:08:34,86000,Gasto,Crema dental y shampoo en Farmatodo en efectivo,Salud y Educación
+2026-07-10 15:19:23,1233500,Ingreso,pago de quincena nómina,Ingresos
+2026-07-10 15:44:04,6900,Gasto,tinto en juan valdez,Gastos Hormiga
+2026-07-10 23:56:37,43500,Gasto,Helado en Popsy el domingo hoy,Ocio y Entretenimiento
+2026-07-11 03:27:06,68000,Gasto,Transferencia para la vaca del viernes,Ocio y Entretenimiento
+2026-07-11 11:08:40,80500,Gasto,Consulta odontología particular pago rápido,Salud y Educación
+2026-07-12 11:17:46,94500,Gasto,Implementos de estudio y salud,Salud y Educación
+2026-07-12 20:44:16,52500,Gasto,rumba y cover en chapinero por pse,Ocio y Entretenimiento
+2026-07-13 16:21:17,10600,Gasto,Mecato media tarde pago rápido,Gastos Hormiga
+2026-07-13 17:17:01,19500,Gasto,Carrera hacia la casa,Transporte
+2026-07-14 08:51:25,7000,Gasto,Pasaje de Transmilenio,Transporte
+2026-07-14 11:03:30,7000,Gasto,Gaseosa Coca Cola personal tienda pago rápido,Gastos Hormiga
+2026-07-15 09:45:12,41500,Gasto,Medicamentos en Drogueria La Rebaja,Salud y Educación
+2026-07-15 11:19:21,3400,Gasto,Empanada y gaseosa en la esquina,Gastos Hormiga
+2026-07-15 19:14:18,18500,Gasto,Peaje salida de Bogotá en efectivo,Transporte
+2026-07-16 11:11:20,889500,Gasto,Cuota fija mensual vivienda por PSE,Vivienda y Servicios
+2026-07-16 11:28:10,137000,Gasto,Recibo del agua Acueducto,Vivienda y Servicios
+2026-07-16 11:43:24,47000,Gasto,Pago administración conjunto pago rápido,Vivienda y Servicios
+2026-07-16 14:48:48,20000,Gasto,pan y huevos para el desayuno por pse,Alimentación
+2026-07-17 01:01:22,83000,Gasto,Salida a comer Crepes & Waffles con Nequi,Ocio y Entretenimiento
+2026-07-17 02:13:48,23000,Gasto,Pago cuenta en el bar con Nequi,Ocio y Entretenimiento
+2026-07-18 14:26:40,19500,Gasto,Almuerzo corrientazo cerca a la U en efectivo,Alimentación
+2026-07-18 18:56:28,23500,Gasto,Almuerzo en el casino de la universidad,Alimentación
+2026-07-19 12:04:03,12000,Gasto,Pedido domicilio almuerzo pago rapido,Alimentación
+2026-07-20 02:37:59,25500,Gasto,Rumba y cover en Chapinero,Ocio y Entretenimiento
+2026-07-20 11:44:20,4000,Gasto,Oblea con arequipe en el parque pago rápido,Gastos Hormiga
+2026-07-20 12:23:36,137500,Gasto,Mercado Olimpica,Alimentación
+2026-07-20 14:39:38,1552000,Ingreso,Me pagaron plata que me debían por Daviplata con Nequi,Ingresos
+2026-07-21 10:43:55,360500,Gasto,pago inscripción académica en efectivo,Salud y Educación
+2026-07-21 11:23:39,547500,Gasto,Pago inscripción académica,Salud y Educación
+2026-07-22 00:39:18,52500,Gasto,Bolos y billar con amigos por PSE,Ocio y Entretenimiento
+2026-07-22 06:25:37,9300,Gasto,pasaje de transmilenio hoy,Transporte
+2026-07-22 08:41:10,64000,Gasto,medicamentos en droguería la rebaja hoy,Salud y Educación
+2026-07-22 09:24:12,62000,Gasto,crema dental y shampoo en farmatodo,Salud y Educación
+2026-07-22 12:47:16,117000,Gasto,carne y pollo en la fama del barrio por pse,Alimentación
+2026-07-22 12:57:25,17000,Gasto,Pedido domicilio almuerzo,Alimentación
+2026-07-22 17:42:12,50000,Gasto,Mensualidad del gimnasio Smart Fit hoy,Salud y Educación
+2026-07-23 16:59:42,7000,Gasto,Mecato media tarde hoy,Gastos Hormiga
+2026-07-24 11:42:57,2300,Gasto,Botella de agua en la calle por PSE,Gastos Hormiga
+2026-07-24 14:07:39,64500,Gasto,Cuadernos esferos y carpeta en Panamericana,Salud y Educación
+2026-07-24 19:17:50,112000,Gasto,boletas de cine colombia y crispetas,Ocio y Entretenimiento
+2026-07-24 21:11:05,18500,Gasto,Picap moto rápido para llegar a clase,Transporte
+2026-07-25 00:16:25,115500,Gasto,salida nocturna con amigos,Ocio y Entretenimiento
+2026-07-25 01:18:22,83500,Gasto,compra de juego en oferta en steam en efectivo,Ocio y Entretenimiento
+2026-07-25 06:11:09,25500,Gasto,Didi de regreso a la casa,Transporte
+2026-07-25 07:48:58,14000,Gasto,almuerzo corrientazo cerca a la u,Alimentación
+2026-07-25 10:28:23,3600,Gasto,Gasto suelto en la tienda pago rápido,Gastos Hormiga
+2026-07-25 20:45:34,106500,Gasto,Gasto salida sabado en la noche con Nequi,Ocio y Entretenimiento
+2026-07-26 10:19:34,2900,Gasto,antojo rápido en la esquina pago rápido,Gastos Hormiga
+2026-07-26 18:31:04,14500,Gasto,Desayuno caldo y arepa en panadería pago rápido,Alimentación
+2026-07-26 22:27:43,22500,Gasto,Carrera hacia la casa hoy,Transporte
+2026-07-27 11:35:03,10500,Gasto,cuota moderadora cita médica eps pago rápido,Salud y Educación
+2026-07-28 09:30:10,363000,Ingreso,pago monitoría académica universidad con nequi,Ingresos
+2026-07-28 10:44:10,1492000,Ingreso,Abono en cuenta bancaria hoy por PSE,Ingresos
+2026-07-28 16:10:47,136500,Gasto,recibo del agua acueducto por pse,Vivienda y Servicios
+2026-07-29 07:29:39,6000,Gasto,Pago de parqueadero centro comercial hoy,Transporte
+2026-07-29 10:18:11,67500,Gasto,Compra en drogueria turno con Nequi,Salud y Educación
+2026-07-29 14:57:08,189000,Gasto,Mercado quincenal en el D1 pago rápido,Alimentación
+2026-07-29 19:17:20,162500,Gasto,Compra del día cerca a la U pago rápido,Alimentación
+2026-07-30 09:06:37,36500,Gasto,arreglo enchufe y bombillos pago rápido,Vivienda y Servicios
+2026-07-30 14:38:04,396500,Ingreso,Venta de artículo usado por Marketplace pago rápido,Ingresos
+2026-07-30 17:04:21,343500,Ingreso,Pago de quincena nómina pago rápido,Ingresos
+2026-08-01 01:34:47,94500,Gasto,Bolos y billar con amigos,Ocio y Entretenimiento
+2026-08-01 02:14:36,65500,Gasto,Combo hamburguesa en El Corral con amigos,Ocio y Entretenimiento
+2026-08-01 02:27:50,97000,Gasto,Pago cuenta en el bar con Nequi por PSE,Ocio y Entretenimiento
+2026-08-01 07:30:01,85500,Gasto,Gasolina para el carro en Terpel en efectivo,Transporte
+2026-08-01 14:22:13,885500,Gasto,Pago inscripción académica,Salud y Educación
+2026-08-01 15:25:41,5500,Gasto,Gaseosa Coca Cola personal tienda en efectivo,Gastos Hormiga
+2026-08-01 18:30:08,18500,Gasto,Cabify al trabajo pago rápido,Transporte
+2026-08-01 20:19:25,94500,Gasto,pago mensualidad netflix con nequi,Ocio y Entretenimiento
+2026-08-02 08:17:43,242500,Gasto,Carne y pollo en la fama del barrio,Alimentación
+2026-08-02 09:07:17,783500,Gasto,Cuota de arriendo habitación pago rápido,Vivienda y Servicios
+2026-08-02 10:00:56,94500,Gasto,Internet hogar Claro fibra optica con Nequi,Vivienda y Servicios
+2026-08-02 16:35:07,122500,Gasto,Arreglo enchufe y bombillos,Vivienda y Servicios
+2026-08-02 21:40:04,23500,Gasto,Didi de regreso a la casa,Transporte
+2026-08-03 07:03:40,14000,Gasto,Almuerzo corrientazo cerca a la U hoy,Alimentación
+2026-08-03 08:55:18,16000,Gasto,almuerzo menú del día,Alimentación
+2026-08-03 09:01:55,32500,Gasto,Medicamentos en Droguería La Rebaja pago rápido,Salud y Educación
+2026-08-03 16:57:34,47000,Gasto,Pago administración conjunto por PSE,Vivienda y Servicios
+2026-08-03 17:47:18,2000,Gasto,Gasto suelto en la tienda hoy,Gastos Hormiga
+2026-08-03 18:24:09,17500,Gasto,Almuerzo corrientazo cerca a la U por PSE,Alimentación
+2026-08-04 10:08:40,7200,Gasto,Propina rápida monedas en efectivo,Gastos Hormiga
+2026-08-04 10:23:36,120500,Gasto,Recibo del agua Acueducto en efectivo,Vivienda y Servicios
+2026-08-04 14:09:30,18500,Gasto,almuerzo corrientazo cerca a la u con nequi,Alimentación
+2026-08-04 17:07:17,94000,Gasto,Impresión de póster académico y anillado con Nequi,Salud y Educación
+2026-08-05 10:39:02,141000,Gasto,Internet hogar Claro fibra óptica pago rápido,Vivienda y Servicios
+2026-08-05 12:37:52,207500,Gasto,Mercado quincenal en el D1 en efectivo,Alimentación
+2026-08-05 15:19:34,105500,Gasto,Recibo del agua Acueducto con Nequi,Vivienda y Servicios
+2026-08-05 15:33:56,3900,Gasto,fotocopias e impresiones trabajo de la u con nequi,Salud y Educación
+2026-08-05 16:50:19,83500,Gasto,recibo mensual pagado por nequi,Vivienda y Servicios
+2026-08-06 08:44:14,77000,Gasto,mercado olímpica,Alimentación
+2026-08-06 12:04:48,97500,Gasto,Compra pago con Nequi en efectivo,Alimentación
+2026-08-07 03:49:02,43500,Gasto,Combo hamburguesa en El Corral con amigos,Ocio y Entretenimiento
+2026-08-07 07:44:02,18500,Gasto,didi de regreso a la casa hoy,Transporte
+2026-08-07 15:30:04,54000,Gasto,implementos de estudio y salud pago rápido,Salud y Educación
+2026-08-07 19:27:43,9900,Gasto,pago de parqueadero centro comercial con nequi,Transporte
+2026-08-08 07:08:53,31000,Gasto,Peaje salida de Bogotá hoy,Transporte
+2026-08-08 11:43:59,2400,Gasto,papas margarita y chocolatina jet en oxxo con nequi,Gastos Hormiga
+2026-08-08 13:04:25,225000,Gasto,compra del día cerca a la u por pse,Alimentación
+2026-08-08 21:10:38,41500,Gasto,Combo hamburguesa en El Corral con amigos pago rapido,Ocio y Entretenimiento
+2026-08-09 03:55:00,38000,Gasto,Domicilio de pizza por Rappi pago rápido,Ocio y Entretenimiento
+2026-08-09 06:24:43,42500,Gasto,cambio de aceite moto hoy,Transporte
+2026-08-10 09:30:38,622500,Ingreso,Bono o comisión extra de trabajo hoy,Ingresos
+2026-08-10 10:20:30,8400,Gasto,Tinto en Juan Valdez pago rápido,Gastos Hormiga
+2026-08-10 13:40:23,199000,Gasto,Arroz aceite y granos en Ara,Alimentación
+2026-08-10 17:27:34,1406000,Ingreso,Clases particulares de cálculo y física,Ingresos
+2026-08-10 18:00:19,404500,Ingreso,anticipo desarrollo aplicación web hoy,Ingresos
+2026-08-11 11:54:05,52000,Gasto,Crema dental y shampoo en Farmatodo en efectivo,Salud y Educación
+2026-08-12 08:44:43,57000,Gasto,Gasolina para el carro en Terpel hoy,Transporte
+2026-08-12 08:58:06,427000,Gasto,Materiales para entrega de semestre con Nequi,Salud y Educación
+2026-08-12 14:36:50,11700,Gasto,Fotocopias e impresiones trabajo de la U,Salud y Educación
+2026-08-13 17:50:20,7000,Gasto,Algo de tomar y mecato,Gastos Hormiga
+2026-08-15 01:07:14,100000,Gasto,pago mensualidad netflix por pse,Ocio y Entretenimiento
+2026-08-15 01:18:45,45500,Gasto,rumba y cover en chapinero pago rápido,Ocio y Entretenimiento
+2026-08-15 01:46:52,81500,Gasto,Rumba y cover en Chapinero,Ocio y Entretenimiento
+2026-08-15 09:18:48,73500,Gasto,Compra de jabon en polvo y aseo casa pago rapido,Vivienda y Servicios
+2026-08-15 09:30:28,63500,Gasto,Factura de gas natural Vanti,Vivienda y Servicios
+2026-08-15 15:15:03,1585000,Ingreso,Pago de soporte tecnico y mantenimiento PC,Ingresos
+2026-08-15 16:04:51,718000,Ingreso,transferencia recibida en nequi,Ingresos
+2026-08-15 17:38:58,867000,Ingreso,pago de quincena nómina,Ingresos
+2026-08-15 18:13:24,463000,Ingreso,Depósito recibido en cuenta,Ingresos
+2026-08-15 18:21:43,725000,Ingreso,Clases particulares de cálculo y física,Ingresos
+2026-08-15 19:18:29,81500,Gasto,Suscripción Xbox Game Pass en efectivo,Ocio y Entretenimiento
+2026-08-15 20:39:05,107000,Gasto,Helado en Popsy el domingo en efectivo,Ocio y Entretenimiento
+2026-08-15 21:21:53,82000,Gasto,Helado en Popsy el domingo por PSE,Ocio y Entretenimiento
+2026-08-15 22:36:30,110000,Gasto,bolos y billar con amigos pago rápido,Ocio y Entretenimiento
+2026-08-16 09:46:54,42500,Gasto,Internet hogar Claro fibra óptica,Vivienda y Servicios
+2026-08-16 11:42:33,63500,Gasto,Factura plan móvil Tigo,Vivienda y Servicios
+2026-08-16 11:44:10,40500,Gasto,Peluqueria corte de cabello en efectivo,Salud y Educación
+2026-08-16 14:11:04,1491000,Ingreso,Venta de artículo usado por Marketplace,Ingresos
+2026-08-16 14:27:31,1176000,Ingreso,pago monitoría académica universidad,Ingresos
+2026-08-16 14:52:00,1145000,Ingreso,pago de quincena nómina en efectivo,Ingresos
+2026-08-16 15:20:52,9400,Gasto,Mecato media tarde con Nequi,Gastos Hormiga
+2026-08-16 15:29:01,5700,Gasto,dulces y chicles en la chaza de la u,Gastos Hormiga
+2026-08-16 15:41:26,140500,Gasto,factura de gas natural vanti en efectivo,Vivienda y Servicios
+2026-08-16 15:41:59,60000,Gasto,Cuadernos esferos y carpeta en Panamericana pago rápido,Salud y Educación
+2026-08-16 15:47:15,49500,Gasto,compra de jabón en polvo y aseo casa hoy,Vivienda y Servicios
+2026-08-16 16:51:26,7500,Gasto,Compra pequeña en efectivo en efectivo,Gastos Hormiga
+2026-08-16 18:04:11,227500,Ingreso,me pagaron plata que me debían por daviplata,Ingresos
+2026-08-16 19:03:10,16500,Gasto,Pan y huevos para el desayuno,Alimentación
+2026-08-16 21:44:48,10900,Gasto,Pasaje de Transmilenio,Transporte
+2026-08-17 17:26:08,5500,Gasto,Botella de agua en la calle con Nequi,Gastos Hormiga
+2026-08-18 07:31:17,29500,Gasto,Peaje salida de Bogotá en efectivo,Transporte
+2026-08-19 22:17:03,23000,Gasto,Uber hacia la universidad por lluvia por PSE,Transporte
+2026-08-19 22:55:58,19000,Gasto,Didi de regreso a la casa,Transporte
+2026-08-20 10:07:43,95500,Ingreso,Pago por proyecto freelance de programación hoy,Ingresos
+2026-08-20 14:45:55,278500,Gasto,Mercado quincenal en el D1,Alimentación
+2026-08-20 17:32:37,32500,Gasto,Didi de regreso a la casa con Nequi,Transporte
+2026-08-21 11:53:47,50500,Gasto,Impresión de póster académico y anillado en efectivo,Salud y Educación
+2026-08-21 14:24:09,236500,Gasto,Arroz aceite y granos en Ara en efectivo,Alimentación
+2026-08-21 16:37:08,59000,Gasto,Acetaminofén y antigripal en Cruz Verde hoy,Salud y Educación
+2026-08-22 00:37:39,43000,Gasto,Suscripción mensual de Spotify en efectivo,Ocio y Entretenimiento
+2026-08-22 07:15:56,277000,Gasto,Compra del día cerca a la U por PSE,Alimentación
+2026-08-22 13:22:44,262000,Gasto,Compras del mes en Ara en efectivo,Alimentación
+2026-08-22 19:34:00,34500,Gasto,Recarga rápida en taquilla,Transporte
+2026-08-23 18:24:11,6900,Gasto,Pago de parqueadero centro comercial,Transporte
+2026-08-24 16:40:15,3100,Gasto,Mecato media tarde,Gastos Hormiga
+2026-08-25 11:01:55,25500,Gasto,Acetaminofén y antigripal en Cruz Verde,Salud y Educación
+2026-08-25 15:48:50,51000,Gasto,Compra en droguería turno,Salud y Educación
+2026-08-26 08:15:00,5900,Gasto,Pasaje de Transmilenio con Nequi,Transporte
+2026-08-26 10:15:14,7000,Gasto,Tinto en Juan Valdez,Gastos Hormiga
+2026-08-26 18:08:43,13500,Gasto,Almuerzo en el casino de la universidad hoy,Alimentación
+2026-08-27 07:58:46,14000,Gasto,Pan y huevos para el desayuno pago rapido,Alimentación
+2026-08-27 13:24:45,269000,Gasto,compras del mes en ara por pse,Alimentación
+2026-08-28 02:37:44,120000,Gasto,boletas de cine colombia y crispetas en efectivo,Ocio y Entretenimiento
+2026-08-28 07:54:24,74500,Gasto,carne y pollo en la fama del barrio,Alimentación
+2026-08-28 09:22:05,91000,Gasto,Cuadernos esferos y carpeta en Panamericana hoy,Salud y Educación
+2026-08-28 14:06:21,611000,Ingreso,Bono o comision extra de trabajo,Ingresos
+2026-08-28 14:19:55,252000,Gasto,Mercado en el Éxito,Alimentación
+2026-08-28 16:49:34,10500,Gasto,oblea con arequipe en el parque con nequi,Gastos Hormiga
+2026-08-28 18:09:14,19000,Gasto,Viaje rapido por aplicacion,Transporte
+2026-08-29 08:36:39,36500,Gasto,Gasolina para el carro en Terpel hoy,Transporte
+2026-08-29 11:21:41,118000,Gasto,compra de jabón en polvo y aseo casa con nequi,Vivienda y Servicios
+2026-08-29 16:38:55,966000,Gasto,Pago de arriendo apartamento,Vivienda y Servicios
+2026-08-29 19:20:56,10000,Gasto,Pago de parqueadero centro comercial,Transporte
+2026-08-30 02:42:46,24500,Gasto,cervezas en bbc el viernes hoy,Ocio y Entretenimiento
+2026-08-30 09:23:17,190500,Ingreso,bono o comisión extra de trabajo hoy,Ingresos
+2026-08-30 10:58:35,632500,Ingreso,Pago de soporte técnico y mantenimiento PC con Nequi,Ingresos
+2026-08-30 11:07:59,572500,Ingreso,venta de artículo usado por marketplace por pse,Ingresos
+2026-08-30 14:04:48,848000,Ingreso,Pago de quincena nómina en efectivo,Ingresos
+2026-08-30 15:45:29,553500,Ingreso,Devolucion de la vaca por Nequi con Nequi,Ingresos
+2026-08-30 16:50:37,325000,Ingreso,Devolucion de la vaca por Nequi en efectivo,Ingresos
+2026-08-30 17:21:16,165000,Ingreso,Devolucion de la vaca por Nequi,Ingresos
+2026-09-01 09:40:44,870000,Gasto,Cuota de arriendo habitación en efectivo,Vivienda y Servicios
+2026-09-01 10:20:38,1096000,Gasto,Pago de arriendo apartamento hoy,Vivienda y Servicios
+2026-09-01 10:24:36,2100,Gasto,antojo rápido en la esquina,Gastos Hormiga
+2026-09-01 10:46:21,730500,Ingreso,Anticipo desarrollo aplicación web,Ingresos
+2026-09-01 17:13:11,104000,Gasto,Curso online en Udemy pago rapido,Salud y Educación
+2026-09-02 10:42:46,69000,Gasto,factura plan móvil tigo en efectivo,Vivienda y Servicios
+2026-09-02 11:44:29,6100,Gasto,Buñuelo y avena fría,Gastos Hormiga
+2026-09-02 18:47:12,17000,Gasto,indrive al centro por pse,Transporte
+2026-09-03 10:05:35,8700,Gasto,Botella de agua en la calle,Gastos Hormiga
+2026-09-03 15:45:45,62000,Gasto,factura de energía enel codensa en efectivo,Vivienda y Servicios
+2026-09-03 17:14:16,34000,Gasto,uber hacia la universidad por lluvia,Transporte
+2026-09-04 03:50:03,122500,Gasto,Suscripcion mensual de Spotify con Nequi,Ocio y Entretenimiento
+2026-09-04 07:10:16,241500,Gasto,Arroz aceite y granos en Ara,Alimentación
+2026-09-04 09:17:06,113500,Gasto,pago mensual obligatorio por pse pago rápido,Vivienda y Servicios
+2026-09-04 10:21:52,123500,Gasto,Internet hogar Claro fibra optica hoy,Vivienda y Servicios
+2026-09-04 16:12:00,4400,Gasto,Buñuelo y avena fría,Gastos Hormiga
+2026-09-04 18:09:22,21500,Gasto,Desayuno caldo y arepa en panadería,Alimentación
+2026-09-04 21:48:16,53000,Gasto,Alitas y pola con los de la U,Ocio y Entretenimiento
+2026-09-05 00:43:39,114500,Gasto,Compra de juego en oferta en Steam,Ocio y Entretenimiento
+2026-09-05 08:53:32,93000,Gasto,Tanqueada de la moto gasolina corriente por PSE,Transporte
+2026-09-05 10:21:44,9500,Gasto,Compra pequeña en efectivo,Gastos Hormiga
+2026-09-05 10:38:55,85500,Gasto,recibo mensual pagado por nequi con nequi,Vivienda y Servicios
+2026-09-05 11:38:24,42000,Gasto,Plan de datos celular WOM,Vivienda y Servicios
+2026-09-05 13:47:51,24000,Gasto,pedido domicilio almuerzo,Alimentación
+2026-09-05 14:38:47,152000,Gasto,Mercado en el Éxito en efectivo,Alimentación
+2026-09-05 15:05:13,696000,Ingreso,pago monitoría académica universidad,Ingresos
+2026-09-05 22:56:45,108500,Gasto,Salida a comer Crepes & Waffles con Nequi,Ocio y Entretenimiento
+2026-09-06 07:04:39,31000,Gasto,Uber hacia la universidad por lluvia,Transporte
+2026-09-06 09:44:00,78500,Gasto,Acetaminofen y antigripal en Cruz Verde,Salud y Educación
+2026-09-07 08:06:05,17000,Gasto,Almuerzo menú del día por PSE,Alimentación
+2026-09-07 16:45:36,17000,Gasto,Fotocopias e impresiones trabajo de la U por PSE,Salud y Educación
+2026-09-07 18:01:44,14500,Gasto,Recarga rápida en taquilla en efectivo,Transporte
+2026-09-07 19:55:41,249500,Gasto,Arroz aceite y granos en Ara pago rápido,Alimentación
+2026-09-08 08:22:46,473500,Gasto,Pago parcial créditos universidad en efectivo,Salud y Educación
+2026-09-08 08:40:40,89500,Gasto,Consulta odontología particular con Nequi,Salud y Educación
+2026-09-08 15:08:53,102500,Gasto,mensualidad del gimnasio smart fit pago rápido,Salud y Educación
+2026-09-08 18:24:40,13500,Gasto,peaje salida de bogotá por pse,Transporte
+2026-09-08 21:00:25,32000,Gasto,picap moto rápido para llegar a clase en efectivo,Transporte
+2026-09-10 07:51:29,273500,Gasto,Leche queso y jamon en el D1 en efectivo,Alimentación
+2026-09-10 18:52:26,35500,Gasto,Didi de regreso a la casa,Transporte
+2026-09-11 00:55:58,57000,Gasto,Transferencia para la vaca del viernes con Nequi,Ocio y Entretenimiento
+2026-09-11 01:08:32,47500,Gasto,Suscripción Amazon Prime Video con Nequi,Ocio y Entretenimiento
+2026-09-11 19:20:05,55500,Gasto,Suscripción mensual de Spotify pago rápido,Ocio y Entretenimiento
+2026-09-11 21:03:55,24000,Gasto,Peaje salida de Bogotá,Transporte
+2026-09-12 17:07:35,82000,Gasto,Acetaminofén y antigripal en Cruz Verde pago rápido,Salud y Educación
+2026-09-13 00:51:07,125000,Gasto,Rumba y cover en Chapinero,Ocio y Entretenimiento
+2026-09-13 01:23:41,57000,Gasto,Compra fin de semana noche,Ocio y Entretenimiento
+2026-09-13 01:52:53,113000,Gasto,Rumba y cover en Chapinero,Ocio y Entretenimiento
+2026-09-13 08:42:33,31000,Gasto,Picap moto rapido para llegar a clase,Transporte
+2026-09-13 18:09:27,126000,Gasto,Leche queso y jamón en el D1,Alimentación
+2026-09-13 18:22:40,25000,Gasto,peaje salida de bogotá pago rápido,Transporte
+2026-09-14 02:46:36,36000,Gasto,suscripción amazon prime video,Ocio y Entretenimiento
+2026-09-14 08:42:56,52000,Gasto,consulta odontología particular,Salud y Educación
+2026-09-14 10:17:12,5400,Gasto,Cuota moderadora cita médica EPS,Salud y Educación
+2026-09-14 11:41:53,6100,Gasto,tinto y pan de bono a media mañana pago rápido,Gastos Hormiga
+2026-09-14 16:53:32,10500,Gasto,oblea con arequipe en el parque,Gastos Hormiga
+2026-09-14 17:20:20,12500,Gasto,Recarga tarjeta SITP con Nequi,Transporte
+2026-09-14 19:05:39,65000,Gasto,suscripción mensual de spotify con nequi,Ocio y Entretenimiento
+2026-09-15 08:06:11,33000,Gasto,Compra en droguería turno pago rápido,Salud y Educación
+2026-09-15 08:42:50,534000,Gasto,Materiales para entrega de semestre,Salud y Educación
+2026-09-15 10:17:23,446500,Ingreso,Pago de quincena nómina hoy,Ingresos
+2026-09-15 10:42:21,903500,Gasto,cuota de arriendo habitación,Vivienda y Servicios
+2026-09-15 11:55:58,93000,Gasto,Recibo mensual pagado por Nequi en efectivo,Vivienda y Servicios
+2026-09-15 14:09:54,35000,Gasto,Acetaminofén y antigripal en Cruz Verde pago rápido,Salud y Educación
+2026-09-15 17:25:25,101000,Gasto,Mensualidad del gimnasio Smart Fit,Salud y Educación
+2026-09-15 17:55:14,7700,Gasto,Dulces y chicles en la chaza de la U pago rápido,Gastos Hormiga
+2026-09-16 09:47:22,1581500,Ingreso,transferencia recibida en nequi pago rápido,Ingresos
+2026-09-16 11:49:45,78000,Gasto,factura plan móvil tigo con nequi,Vivienda y Servicios
+2026-09-16 17:11:48,393500,Ingreso,Anticipo desarrollo aplicación web por PSE,Ingresos
+2026-09-16 19:46:04,17500,Gasto,corrientazo ejecutivo restaurante,Alimentación
+2026-09-17 06:50:51,37500,Gasto,InDrive al centro,Transporte
+2026-09-17 11:36:28,10000,Gasto,Botella de agua en la calle pago rapido,Gastos Hormiga
+2026-09-17 18:49:37,18500,Gasto,Desayuno caldo y arepa en panadería,Alimentación
+2026-09-17 20:32:53,29500,Gasto,Salida a comer Crepes & Waffles por PSE,Ocio y Entretenimiento
+2026-09-18 16:49:52,2100,Gasto,Perro caliente callejero,Gastos Hormiga
+2026-09-18 21:22:19,76500,Gasto,boletas de cine colombia y crispetas en efectivo,Ocio y Entretenimiento
+2026-09-19 01:00:12,23500,Gasto,compra fin de semana noche,Ocio y Entretenimiento
+2026-09-19 14:56:43,25500,Gasto,corrientazo ejecutivo restaurante,Alimentación
+2026-09-20 09:24:36,447500,Ingreso,Venta de artículo usado por Marketplace,Ingresos
+2026-09-20 09:30:25,2000,Gasto,Arepita con queso en la calle pago rápido,Gastos Hormiga
+2026-09-20 15:08:23,34000,Gasto,Curso online en Udemy con Nequi,Salud y Educación
+2026-09-20 21:28:13,10500,Gasto,Parqueadero cerca a la U pago rápido,Transporte
+2026-09-20 23:00:09,83000,Gasto,vaca para asado donde un amigo con nequi,Ocio y Entretenimiento
+2026-09-21 19:14:12,237500,Gasto,mercado quincenal en el d1,Alimentación
+2026-09-22 02:21:03,113500,Gasto,Alitas y pola con los de la U pago rápido,Ocio y Entretenimiento
+2026-09-22 19:18:34,79000,Gasto,Verduras y frutas en el fruver,Alimentación
+2026-09-23 08:48:27,29000,Gasto,Recarga tarjeta TuLlave Transmilenio hoy,Transporte
+2026-09-23 19:58:43,18500,Gasto,almuerzo corrientazo cerca a la u hoy,Alimentación
+2026-09-24 07:11:56,18500,Gasto,Almuerzo en el casino de la universidad hoy,Alimentación
+2026-09-24 10:16:05,6400,Gasto,arepita con queso en la calle,Gastos Hormiga
+2026-09-24 18:54:17,74000,Gasto,Mercado Olimpica,Alimentación
+2026-09-25 00:09:59,99500,Gasto,Salida a comer Crepes & Waffles,Ocio y Entretenimiento
+2026-09-25 03:28:32,85000,Gasto,rumba y cover en chapinero pago rápido,Ocio y Entretenimiento
+2026-09-25 23:46:01,64500,Gasto,transferencia para la vaca del viernes,Ocio y Entretenimiento
+2026-09-26 15:01:16,73000,Gasto,Medicamentos en Droguería La Rebaja pago rápido,Salud y Educación
+2026-09-26 17:36:25,3500,Gasto,Perro caliente callejero pago rapido,Gastos Hormiga
+2026-09-26 19:13:17,14500,Gasto,Viaje rápido por aplicación hoy,Transporte
+2026-09-26 22:24:22,34000,Gasto,Carrera hacia la casa por PSE,Transporte
+2026-09-27 17:09:29,6600,Gasto,tinto en juan valdez con nequi,Gastos Hormiga
+2026-09-27 23:24:01,28500,Gasto,Pago mensualidad Netflix,Ocio y Entretenimiento
+2026-09-28 07:48:06,175500,Gasto,carne y pollo en la fama del barrio por pse,Alimentación
+2026-09-28 18:44:49,30000,Gasto,Recarga tarjeta TuLlave Transmilenio por PSE,Transporte
+2026-09-28 18:52:19,22500,Gasto,Almuerzo corrientazo cerca a la U,Alimentación
+2026-09-29 09:55:05,10900,Gasto,Dulces y chicles en la chaza de la U con Nequi,Gastos Hormiga
+2026-09-29 16:31:16,136500,Gasto,Pago administración conjunto,Vivienda y Servicios
+2026-09-29 17:07:57,90500,Gasto,Implementos de estudio y salud,Salud y Educación
+2026-09-29 22:16:03,15500,Gasto,Recarga tarjeta TuLlave Transmilenio,Transporte
+2026-09-30 08:13:38,89000,Gasto,Factura de energía Enel Codensa en efectivo,Vivienda y Servicios
+2026-09-30 08:59:23,830500,Gasto,Pago de arriendo apartamento,Vivienda y Servicios
+2026-09-30 08:59:43,57000,Gasto,factura de energía enel codensa pago rápido,Vivienda y Servicios
+2026-09-30 09:30:13,42500,Gasto,Plan de datos celular WOM en efectivo,Vivienda y Servicios
+2026-09-30 10:47:51,85500,Gasto,Pago administración conjunto por PSE,Vivienda y Servicios
+2026-09-30 12:29:03,21000,Gasto,Almuerzo corrientazo cerca a la U hoy,Alimentación
+2026-09-30 12:54:03,162500,Gasto,compra del día cerca a la u con nequi,Alimentación
+2026-09-30 15:15:11,90000,Ingreso,transferencia recibida en nequi pago rápido,Ingresos
+2026-09-30 15:23:55,704500,Ingreso,Bono o comision extra de trabajo,Ingresos
+2026-09-30 17:47:32,1025500,Ingreso,Abono en cuenta bancaria hoy en efectivo,Ingresos
+2026-09-30 18:32:38,37000,Gasto,Recarga tarjeta SITP pago rápido,Transporte
+2026-09-30 18:55:35,182500,Gasto,Leche queso y jamón en el D1 pago rápido,Alimentación
+2026-10-01 11:51:41,68500,Gasto,Pago administración conjunto,Vivienda y Servicios
+2026-10-01 15:18:47,1220500,Ingreso,Pago de soporte técnico y mantenimiento PC,Ingresos
+2026-10-01 16:53:25,128000,Gasto,Factura de energía Enel Codensa con Nequi,Vivienda y Servicios
+2026-10-01 18:56:50,119000,Ingreso,Bono o comisión extra de trabajo,Ingresos
+2026-10-02 07:18:43,179000,Gasto,Mercado en el Exito,Alimentación
+2026-10-02 10:09:19,109500,Gasto,Pago administración conjunto por PSE,Vivienda y Servicios
+2026-10-02 10:27:33,1600,Gasto,Antojo rápido en la esquina pago rápido,Gastos Hormiga
+2026-10-02 14:00:18,20500,Gasto,almuerzo corrientazo cerca a la u por pse,Alimentación
+2026-10-03 09:36:47,75000,Gasto,Peluquería corte de cabello hoy,Salud y Educación
+2026-10-03 11:20:51,1600,Gasto,mecato media tarde en efectivo,Gastos Hormiga
+2026-10-04 10:47:25,81000,Gasto,factura plan móvil tigo,Vivienda y Servicios
+2026-10-04 16:31:20,58000,Gasto,Transferencia pago fijo del mes por PSE,Vivienda y Servicios
+2026-10-04 17:20:44,16000,Gasto,Didi de regreso a la casa,Transporte
+2026-10-04 17:43:06,28000,Gasto,peaje salida de bogotá por pse,Transporte
+2026-10-04 18:05:39,23000,Gasto,Gasto comida hoy en efectivo,Alimentación
+2026-10-04 21:01:03,27500,Gasto,pago transporte regreso,Transporte
+2026-10-05 07:20:25,26000,Gasto,Recarga tarjeta SITP con Nequi,Transporte
+2026-10-05 08:08:20,82000,Gasto,Recibo del agua Acueducto,Vivienda y Servicios
+2026-10-05 08:14:32,76500,Gasto,transferencia pago fijo del mes,Vivienda y Servicios
+2026-10-05 09:50:49,468000,Ingreso,Pago monitoría académica universidad,Ingresos
+2026-10-05 16:33:39,10000,Gasto,propina rápida monedas con nequi,Gastos Hormiga
+2026-10-05 17:22:27,1084500,Ingreso,Transferencia recibida en Nequi hoy,Ingresos
+2026-10-06 16:03:56,8100,Gasto,Botella de agua en la calle,Gastos Hormiga
+2026-10-06 19:20:08,21500,Gasto,Pan y huevos para el desayuno,Alimentación
+2026-10-07 09:09:32,4300,Gasto,Chocoramo y pony malta,Gastos Hormiga
+2026-10-07 17:28:48,43500,Gasto,tanqueada de la moto gasolina corriente,Transporte
+2026-10-07 18:10:11,22000,Gasto,Almuerzo corrientazo cerca a la U hoy,Alimentación
+2026-10-08 08:04:26,44500,Gasto,Gasolina para el carro en Terpel pago rápido,Transporte
+2026-10-08 10:34:40,5100,Gasto,Dulces y chicles en la chaza de la U,Gastos Hormiga
+2026-10-08 11:24:02,5500,Gasto,dulces y chicles en la chaza de la u por pse,Gastos Hormiga
+2026-10-09 08:07:12,24500,Gasto,viaje rápido por aplicación,Transporte
+2026-10-09 15:31:31,24500,Gasto,Peluquería corte de cabello por PSE,Salud y Educación
+2026-10-09 15:45:47,6100,Gasto,Arepita con queso en la calle hoy,Gastos Hormiga
+2026-10-10 09:13:29,329500,Ingreso,Venta de artículo usado por Marketplace hoy,Ingresos
+2026-10-10 10:39:02,37500,Gasto,Crema dental y shampoo en Farmatodo pago rápido,Salud y Educación
+2026-10-10 11:11:09,1146500,Ingreso,Pago por proyecto freelance de programación,Ingresos
+2026-10-10 14:06:04,1291500,Ingreso,venta de artículo usado por marketplace,Ingresos
+2026-10-10 18:38:52,68500,Ingreso,Venta de artículo usado por Marketplace pago rápido,Ingresos
+2026-10-10 20:24:50,86000,Gasto,pago cuenta en el bar con nequi en efectivo,Ocio y Entretenimiento
+2026-10-10 22:59:26,43500,Gasto,Salida a comer Crepes & Waffles,Ocio y Entretenimiento
+2026-10-11 17:31:20,9600,Gasto,propina rápida monedas en efectivo,Gastos Hormiga
+2026-10-11 20:14:22,18500,Gasto,Vaca para asado donde un amigo en efectivo,Ocio y Entretenimiento
+2026-10-11 20:29:10,69000,Gasto,Salida a comer Crepes & Waffles con Nequi,Ocio y Entretenimiento
+2026-10-13 14:49:57,47500,Gasto,Compra en droguería turno,Salud y Educación
+2026-10-14 07:16:00,14500,Gasto,Pan y huevos para el desayuno hoy,Alimentación
+2026-10-14 11:35:17,70000,Gasto,Impresión de póster académico y anillado hoy,Salud y Educación
+2026-10-14 19:46:22,9800,Gasto,Parqueadero cerca a la U pago rápido,Transporte
+2026-10-15 09:40:57,132000,Gasto,Recibo del agua Acueducto,Vivienda y Servicios
+2026-10-15 09:42:23,160000,Ingreso,Clases particulares de calculo y fisica,Ingresos
+2026-10-15 10:26:10,8300,Gasto,Mecato media tarde,Gastos Hormiga
+2026-10-15 12:52:22,23500,Gasto,Almuerzo menú del día,Alimentación
+2026-10-15 16:34:27,111500,Gasto,internet hogar claro fibra óptica por pse,Vivienda y Servicios
+2026-10-15 17:53:46,1017500,Ingreso,Mesada semanal transferencia Bancolombia hoy,Ingresos
+2026-10-15 18:48:38,525500,Ingreso,Clases particulares de cálculo y física pago rápido,Ingresos
+2026-10-15 21:42:30,35000,Gasto,Cabify al trabajo con Nequi,Transporte
+2026-10-16 10:18:26,1032500,Gasto,Cuota fija mensual vivienda,Vivienda y Servicios
+2026-10-16 11:03:55,913000,Gasto,Cuota fija mensual vivienda hoy,Vivienda y Servicios
+2026-10-16 14:52:43,466500,Ingreso,Abono en cuenta bancaria hoy por PSE,Ingresos
+2026-10-16 15:44:59,358500,Ingreso,depósito recibido en cuenta pago rápido,Ingresos
+2026-10-16 18:09:45,1132500,Ingreso,Devolución de la vaca por Nequi,Ingresos
+2026-10-17 01:48:25,58500,Gasto,Vaca para asado donde un amigo en efectivo,Ocio y Entretenimiento
+2026-10-17 20:59:27,103000,Gasto,Boletas de Cine Colombia y crispetas,Ocio y Entretenimiento
+2026-10-18 14:49:26,22000,Gasto,Almuerzo corrientazo cerca a la U,Alimentación
+2026-10-18 15:37:32,10900,Gasto,Compra pequeña en efectivo,Gastos Hormiga
+2026-10-18 15:54:23,2100,Gasto,Propina rápida monedas,Gastos Hormiga
+2026-10-18 16:21:00,1103000,Gasto,Pago parcial creditos universidad,Salud y Educación
+2026-10-19 09:10:38,6100,Gasto,Cuota moderadora cita médica EPS pago rápido,Salud y Educación
+2026-10-19 10:24:29,9300,Gasto,Antojo rapido en la esquina pago rapido,Gastos Hormiga
+2026-10-19 17:33:00,39000,Gasto,Consulta odontología particular,Salud y Educación
+2026-10-20 11:36:51,519500,Ingreso,pago monitoría académica universidad por pse,Ingresos
+2026-10-20 12:54:25,94500,Gasto,Pago en caja supermercado,Alimentación
+2026-10-20 16:12:43,6400,Gasto,Oblea con arequipe en el parque,Gastos Hormiga
+2026-10-20 18:33:06,223000,Ingreso,Pago de quincena nomina hoy,Ingresos
+2026-10-21 06:25:48,36500,Gasto,Cambio de aceite moto,Transporte
+2026-10-21 11:22:56,2000,Gasto,Algo de tomar y mecato con Nequi,Gastos Hormiga
+2026-10-21 19:19:24,32500,Gasto,Gasolina para el carro en Terpel pago rápido,Transporte
+2026-10-22 19:10:43,225500,Gasto,Mercado Olímpica pago rápido,Alimentación
+2026-10-22 19:23:32,207500,Gasto,mercado olímpica hoy,Alimentación
+2026-10-23 08:46:22,19500,Gasto,Recarga tarjeta SITP hoy,Transporte
+2026-10-23 14:51:46,11400,Gasto,Fotocopias e impresiones trabajo de la U,Salud y Educación
+2026-10-23 16:14:43,103000,Gasto,Compra en droguería turno en efectivo,Salud y Educación
+2026-10-24 19:02:31,26500,Gasto,Carrera hacia la casa por PSE,Transporte
+2026-10-24 19:14:11,92500,Gasto,rumba y cover en chapinero en efectivo,Ocio y Entretenimiento
+2026-10-25 15:39:24,29500,Gasto,Cuadernos esferos y carpeta en Panamericana,Salud y Educación
+2026-10-25 21:12:07,76000,Gasto,compra fin de semana noche por pse,Ocio y Entretenimiento
+2026-10-25 21:55:55,91500,Gasto,Boletas de Cine Colombia y crispetas,Ocio y Entretenimiento
+2026-10-26 08:21:28,80000,Gasto,compra del día cerca a la u hoy,Alimentación
+2026-10-26 17:36:23,29500,Gasto,Cabify al trabajo por PSE,Transporte
+2026-10-27 07:21:02,6300,Gasto,Pago de parqueadero centro comercial pago rápido,Transporte
+2026-10-27 07:22:51,5300,Gasto,pasaje de transmilenio,Transporte
+2026-10-28 03:17:45,66000,Gasto,Cervezas en BBC el viernes hoy,Ocio y Entretenimiento
+2026-10-28 10:13:18,1256500,Ingreso,devolución de la vaca por nequi,Ingresos
+2026-10-28 10:44:25,73000,Gasto,Factura de gas natural Vanti,Vivienda y Servicios
+2026-10-28 10:57:22,902500,Ingreso,Deposito recibido en cuenta hoy,Ingresos
+2026-10-28 12:49:04,117000,Gasto,compras del mes en ara con nequi,Alimentación
+2026-10-28 14:03:18,1047000,Ingreso,Mesada semanal transferencia Bancolombia con Nequi,Ingresos
+2026-10-28 14:45:45,81000,Gasto,Impresión de póster académico y anillado con Nequi,Salud y Educación
+2026-10-28 15:51:55,85000,Gasto,Factura de energia Enel Codensa en efectivo,Vivienda y Servicios
+2026-10-28 16:58:46,138000,Ingreso,Pago de quincena nómina con Nequi,Ingresos
+2026-10-29 09:27:18,7000,Gasto,Compra pequeña en efectivo hoy,Gastos Hormiga
+2026-10-29 09:42:46,3700,Gasto,tinto y pan de bono a media mañana por pse,Gastos Hormiga
+2026-10-29 09:50:05,96500,Gasto,Plan de datos celular WOM,Vivienda y Servicios
+2026-10-29 11:03:58,58500,Gasto,Factura de energía Enel Codensa pago rápido,Vivienda y Servicios
+2026-10-29 15:02:09,143000,Gasto,Plan de datos celular WOM por PSE,Vivienda y Servicios
+2026-10-29 17:48:28,2700,Gasto,arepita con queso en la calle,Gastos Hormiga
+2026-10-30 03:21:01,80000,Gasto,Suscripción mensual de Spotify en efectivo,Ocio y Entretenimiento
+2026-10-30 09:35:50,70000,Gasto,Transferencia pago fijo del mes,Vivienda y Servicios
+2026-10-30 09:36:11,715000,Ingreso,Abono en cuenta bancaria hoy,Ingresos
+2026-10-30 15:11:14,94000,Gasto,Plan de datos celular WOM hoy,Vivienda y Servicios
+2026-10-30 17:46:21,26000,Gasto,Carrera hacia la casa,Transporte
+2026-10-30 18:18:56,333000,Ingreso,Pago de soporte tecnico y mantenimiento PC pago rapido,Ingresos
+2026-10-30 20:19:23,32000,Gasto,Bolos y billar con amigos por PSE,Ocio y Entretenimiento
