@@ -92,12 +92,14 @@ finazia/
 ├── analisis.py                              # Cálculos: presupuesto, hormiga, 50/30/20, precisión real
 ├── base_datos.py                            # Todo lo de SQLite
 ├── datos_demo.py                            # Movimientos de ejemplo para la demo
-├── ia_clasificadora_multivariable_knn.pkl   # Modelo entrenado (lo genera el notebook)
+├── entrenamiento.py                         # División 70/10/20, ajuste, prueba y exportación del modelo
+├── ia_clasificadora_multivariable_knn.pkl   # Modelo entrenado (lo genera entrenamiento.py o el notebook)
 ├── requirements.txt
 ├── datos/
 │   ├── dataset_multivariable.csv            # 700 movimientos etiquetados (entrenamiento)
 │   ├── prueba_externa.csv                   # 70 movimientos redactados aparte (solo evaluación)
-│   └── plantilla_registros_reales.csv       # Plantilla para registrar movimientos reales
+│   ├── plantilla_registros_reales.csv       # Plantilla para registrar movimientos reales
+│   └── reporte_modelo.json                  # Resultados del último entrenamiento (pantalla «Modelo»)
 └── notebooks/
     ├── FinanzIA_analisis_modelo.ipynb       # Análisis completo y entrenamiento del modelo final
     └── entrenamiento_algoritmos_v1.py       # Primera comparación de los 5 algoritmos (versión anterior)
@@ -155,13 +157,35 @@ Se abrirá sola en tu navegador en **http://localhost:8501**.
 
 ---
 
-## 🔁 Volver a entrenar el modelo
+## 🔁 Entrenar y evaluar el modelo (división 70 / 10 / 20)
 
-1. Abran el notebook en Colab (enlace arriba) o en Jupyter y ejecuten todas las celdas.
-2. La última sección guarda `ia_clasificadora_multivariable_knn.pkl`.
-3. Copien ese archivo a la raíz del repositorio (reemplazando el anterior).
+`entrenamiento.py` aplica la misma metodología del notebook, sin necesidad de abrirlo:
 
-Usen la misma versión de scikit-learn que está en `requirements.txt` (1.9.1).
+| Conjunto | % | Para qué |
+|---|---|---|
+| **Entrenamiento** | 70 % | El modelo aprende de estos ejemplos |
+| **Ajuste (validación)** | 10 % | Escoger hiperparámetros sin tocar la prueba (se rota en 8 rondas y se promedia) |
+| **Prueba** | 20 % | Medir el resultado final **una sola vez**, con frases que el modelo nunca vio |
+
+La división es **agrupada por frase base** (todas las variantes de una frase quedan en el
+mismo conjunto, para que no haya fuga de información) y **estratificada por clase**.
+
+```bash
+python entrenamiento.py                    # evalúa y guarda datos/reporte_modelo.json (≈2 min)
+python entrenamiento.py --guardar-modelo   # además reemplaza ia_clasificadora_multivariable_knn.pkl
+python entrenamiento.py --rapido           # sin comparar los otros 4 algoritmos
+```
+
+El reporte se ve en la app, en la pantalla **Modelo**: la división, el ajuste de K y de
+los pesos, las métricas de la prueba (por categoría y matriz de confusión), la comparación
+de los 5 algoritmos y el análisis del umbral de confianza.
+
+El script reproduce exactamente el notebook: K = 5, pesos monto 2.0 y tiempo 0.5,
+63.6 % en la prueba y 78.6 % en la prueba externa, y el modelo final es idéntico al `.pkl`.
+
+También pueden entrenar desde el notebook (Colab o Jupyter): su última sección guarda el
+`.pkl`, que se copia a la raíz del repositorio. Usen la misma versión de scikit-learn que
+está en `requirements.txt` (1.9.1).
 
 ---
 

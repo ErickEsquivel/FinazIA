@@ -13,6 +13,7 @@ Cada pantalla vive en la carpeta vistas/:
   - registrar.py    registro rápido: la IA clasifica, explica y alerta.
   - movimientos.py  buscar, filtrar, corregir (la IA aprende) y borrar.
   - presupuesto.py  límites por categoría y ajustes del prototipo.
+  - modelo.py       cómo se entrenó y evaluó la IA (división 70/10/20).
 """
 
 from pathlib import Path
@@ -39,6 +40,7 @@ else:
         st.Page("vistas/registrar.py", title="Registrar", icon=":material/add_circle:"),
         st.Page("vistas/movimientos.py", title="Movimientos", icon=":material/receipt_long:"),
         st.Page("vistas/presupuesto.py", title="Presupuesto", icon=":material/savings:"),
+        st.Page("vistas/modelo.py", title="Modelo", icon=":material/model_training:"),
     ]
 
 st.navigation(paginas, position="top").run()

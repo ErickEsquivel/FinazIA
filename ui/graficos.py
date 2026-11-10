@@ -91,3 +91,93 @@ def evolucion_gasto(df_mes: pd.DataFrame, periodo: str, limite_total: float, hoy
 
 def color_saldo(valor) -> str:
     return ROJO if valor < 0 else PRIMARIO
+
+
+# ----------------------------------------------------------------------------
+# Gráficos de la pantalla «Modelo» (reporte de entrenamiento 70/10/20)
+# ----------------------------------------------------------------------------
+AZUL, NARANJA = "#2A78D6", "#EB6834"
+
+
+def f1_por_k(grilla: list, peso_monto, peso_tiempo, k_elegido) -> alt.Chart:
+    """F1 macro en ajuste según K, con los pesos elegidos."""
+    datos = pd.DataFrame(grilla)
+    datos = datos[(datos["peso_monto"] == peso_monto) & (datos["peso_tiempo"] == peso_tiempo)]
+    base = alt.Chart(datos).encode(
+        x=alt.X("k:O", title="K (vecinos que votan)", axis=alt.Axis(labelAngle=0)),
+        y=alt.Y("f1_ajuste:Q", title="F1 macro en ajuste", axis=alt.Axis(format=".1%", tickCount=4),
+                scale=alt.Scale(zero=False)),
+        tooltip=[alt.Tooltip("k:O", title="K"), alt.Tooltip("f1_ajuste:Q", title="F1 ajuste", format=".1%"),
+                 alt.Tooltip("aprende_correccion:Q", title="Aprende con 1 corrección")],
+    )
+    linea = base.mark_line(color=AZUL, strokeWidth=2)
+    puntos = base.mark_circle(size=90).encode(
+        color=alt.condition(alt.datum.k == k_elegido, alt.value(NARANJA), alt.value(AZUL)))
+    return (linea + puntos).properties(height=240)
+
+
+def f1_por_clase(por_clase: list) -> alt.Chart:
+    datos = pd.DataFrame(por_clase)
+    datos["etiqueta"] = datos["clase"].map(con_icono)
+    return (
+        alt.Chart(datos)
+        .mark_bar(cornerRadiusEnd=4, height=16)
+        .encode(
+            y=alt.Y("etiqueta:N", title=None, sort="-x", axis=alt.Axis(labelLimit=180)),
+            x=alt.X("f1:Q", title="F1 en la prueba", axis=alt.Axis(format=".0%", tickCount=5),
+                    scale=alt.Scale(domain=[0, 1])),
+            color=alt.Color("clase:N", legend=None,
+                            scale=alt.Scale(domain=list(CATEGORIA_UI), range=[color(c) for c in CATEGORIA_UI])),
+            tooltip=[alt.Tooltip("etiqueta:N", title="Clase"),
+                     alt.Tooltip("precision:Q", title="Precisión", format=".0%"),
+                     alt.Tooltip("recall:Q", title="Recall", format=".0%"),
+                     alt.Tooltip("f1:Q", title="F1", format=".0%"),
+                     alt.Tooltip("soporte:Q", title="Movimientos")],
+        )
+        .properties(height=260)
+    )
+
+
+def matriz_confusion(clases: list, matriz: list) -> alt.Chart:
+    filas = [{"real": clases[i], "predicha": clases[j], "n": v}
+             for i, fila in enumerate(matriz) for j, v in enumerate(fila)]
+    datos = pd.DataFrame(filas)
+    base = alt.Chart(datos).encode(
+        x=alt.X("predicha:N", title="Lo que dijo la IA", sort=clases, axis=alt.Axis(labelAngle=-35, labelLimit=110)),
+        y=alt.Y("real:N", title="Categoría real", sort=clases, axis=alt.Axis(labelLimit=140)),
+    )
+    celdas = base.mark_rect(cornerRadius=3).encode(
+        color=alt.Color("n:Q", legend=None, scale=alt.Scale(scheme="blues")),
+        tooltip=[alt.Tooltip("real:N", title="Real"), alt.Tooltip("predicha:N", title="IA dijo"),
+                 alt.Tooltip("n:Q", title="Movimientos")],
+    )
+    textos = base.mark_text(fontSize=12).encode(
+        text=alt.condition(alt.datum.n > 0, "n:Q", alt.value("")),
+        color=alt.condition(alt.datum.n >= max(max(f) for f in matriz) / 2, alt.value("white"), alt.value("#1A1D23")),
+    )
+    return (celdas + textos).properties(height=330)
+
+
+def comparacion_modelos(comparacion: list) -> alt.Chart:
+    filas = []
+    for f in comparacion:
+        filas.append({"modelo": f["modelo"], "prueba": "Prueba 20 % (frases nunca vistas)", "accuracy": f["accuracy"]})
+        if "externa" in f:
+            filas.append({"modelo": f["modelo"], "prueba": "Prueba externa (redactada aparte)", "accuracy": f["externa"]})
+    datos = pd.DataFrame(filas)
+    orden = [f["modelo"] for f in comparacion]
+    return (
+        alt.Chart(datos)
+        .mark_bar(cornerRadiusEnd=3, height=11)
+        .encode(
+            y=alt.Y("modelo:N", title=None, sort=orden),
+            yOffset=alt.YOffset("prueba:N"),
+            x=alt.X("accuracy:Q", title="Accuracy", axis=alt.Axis(format=".0%", tickCount=5),
+                    scale=alt.Scale(domain=[0, 1])),
+            color=alt.Color("prueba:N", scale=alt.Scale(range=[AZUL, NARANJA]),
+                            legend=alt.Legend(title=None, orient="top", labelLimit=320)),
+            tooltip=[alt.Tooltip("modelo:N", title="Modelo"), alt.Tooltip("prueba:N", title="Prueba"),
+                     alt.Tooltip("accuracy:Q", title="Accuracy", format=".1%")],
+        )
+        .properties(height=300)
+    )
