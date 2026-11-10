@@ -86,6 +86,8 @@ h1 {{ font-weight: 700; letter-spacing: -0.02em; }}
   content: "menu"; font-size: 1.75rem; color: var(--fz-primario); }}
 [data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"]::before {{
   content: "close"; font-size: 1.5rem; }}
+/* La hamburguesa va en la esquina superior izquierda, antes del logo */
+div:has(> [data-testid="stExpandSidebarButton"]) {{ order: -1; margin-right: 0.5rem; }}
 
 /* Contenedor invisible del script de formateo */
 .st-key-fz_js {{ display: none; }}
