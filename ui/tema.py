@@ -77,6 +77,16 @@ h1 {{ font-weight: 700; letter-spacing: -0.02em; }}
 .fz-ingreso {{ color: var(--fz-verde); }}
 .fz-grande {{ font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }}
 
+/* Menú en pantallas angostas: hamburguesa (☰) para abrir y X para cerrar,
+   en lugar de las flechas » y « de Streamlit. El icono es una fuente de
+   símbolos: se oculta el nombre original y se muestra otro con ::before. */
+[data-testid="stExpandSidebarButton"] [data-testid="stIconMaterial"],
+[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"] {{ font-size: 0 !important; }}
+[data-testid="stExpandSidebarButton"] [data-testid="stIconMaterial"]::before {{
+  content: "menu"; font-size: 1.75rem; color: var(--fz-primario); }}
+[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"]::before {{
+  content: "close"; font-size: 1.5rem; }}
+
 /* Contenedor invisible del script de formateo */
 .st-key-fz_js {{ display: none; }}
 
