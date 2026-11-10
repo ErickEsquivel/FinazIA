@@ -1,76 +1,147 @@
-# FinanzIA: prototipo con Streamlit + SQLite
+# 💰 FinanzIA
 
-Aplicación para manejar finanzas personales. La IA (KNN) clasifica cada
-movimiento y esa categoría se usa para alertar, calcular y aconsejar.
+**Tu asistente de finanzas personales con Inteligencia Artificial.**
 
-## Estructura
+> ⚠️ **Esto es un prototipo, no una versión final.** FinanzIA se desarrolló como
+> proyecto académico para demostrar cómo un modelo de IA puede ayudar a manejar
+> el dinero del día a día. Puede tener errores, sus datos de entrenamiento son
+> limitados y no reemplaza la asesoría de un profesional en finanzas.
+
+## 🚀 Pruébalo en línea
+
+👉 **[https://proyecto-ia-finaz.streamlit.app/](https://proyecto-ia-finaz.streamlit.app/)**
+
+No necesitas instalar nada. Al entrar por primera vez puedes cargar **movimientos
+de ejemplo** para explorar la app con un mes de datos ya registrado.
+
+> En la versión en línea, los datos son compartidos y se borran cada vez que la
+> app se reinicia. No registres información personal real.
+
+---
+
+## 📖 ¿Qué es FinanzIA?
+
+Registrar los gastos es aburrido, y casi nadie sabe en qué se le va la plata.
+FinanzIA lo hace más fácil: **tú escribes el movimiento como lo dirías normalmente**
+(por ejemplo, *"tinto en la chaza"* o *"Uber a la universidad"*) y una **IA lo
+clasifica sola** en una de estas categorías:
+
+`Alimentación` · `Transporte` · `Vivienda y Servicios` · `Ocio y Entretenimiento` ·
+`Gastos Hormiga` · `Salud y Educación` · `Ingresos`
+
+Con esa categoría, la app te ayuda a tomar mejores decisiones:
+
+| Función | Qué hace |
+|---|---|
+| 🔔 **Alertas de presupuesto** | Al registrar un gasto te dice cuánto te queda del límite de esa categoría, o si ya lo superaste. |
+| 🐜 **Detector de gastos hormiga** | Muestra cuánto se te va en gastos pequeños (tintos, dulces, paquetes), cuáles repites más y cuánto sumarían en un año. |
+| 📊 **Regla 50/30/20** | Compara tus gastos con la recomendación: 50% necesidades, 30% deseos y 20% ahorro. |
+| 🚨 **Gastos inusuales** | Avisa si un monto es mucho mayor (o menor) de lo normal para ese tipo de gasto. |
+
+### ¿Cómo piensa la IA?
+
+FinanzIA usa un modelo **KNN (K vecinos más cercanos)**. Para clasificar un movimiento
+busca los **5 movimientos más parecidos** que conoce, teniendo en cuenta la
+descripción, el monto, el tipo y la fecha y hora, y deja que "voten" por una categoría.
+
+- **Es transparente:** te muestra esos 5 vecinos y las palabras que reconoció, para que sepas *por qué* eligió esa categoría.
+- **Sabe cuándo dudar:** si no está segura (menos del 60% de los votos), te pide que elijas tú.
+- **Aprende de ti:** cada movimiento que guardas o corriges se vuelve un nuevo ejemplo, sin reentrenar el modelo.
+- **Mide su precisión real:** en el historial puedes ver qué porcentaje de veces no tuviste que corregirla.
+- **Entiende con o sin tildes:** reconoce igual *"cafe"* y *"café"*.
+
+---
+
+## 🗂️ Estructura del proyecto
 
 ```
 finanzia/
-├── app.py                                   # Interfaz (pantallas de Streamlit)
-├── modelo_ia.py                             # Carga del modelo, predicción, vecinos, inusuales, aprendizaje
-├── analisis.py                              # Cálculos: presupuesto, hormiga, 50/30/20, precisión real
-├── base_datos.py                            # Todo lo de SQLite
-├── datos_demo.py                            # Movimientos de ejemplo para la demo
-├── ia_clasificadora_multivariable_knn.pkl   # Su modelo entrenado
-├── requirements.txt
-└── .gitignore
+├── app.py                                   # Interfaz: las pantallas de la app (Streamlit)
+├── modelo_ia.py                             # La IA: predicción, vecinos, gastos inusuales y aprendizaje
+├── analisis.py                              # Cálculos: presupuesto, gastos hormiga, regla 50/30/20
+├── base_datos.py                            # Base de datos SQLite (movimientos y presupuestos)
+├── datos_demo.py                            # Movimientos de ejemplo para probar la app
+├── ia_clasificadora_multivariable_knn.pkl   # Modelo de IA ya entrenado
+├── requirements.txt                         # Librerías necesarias
+└── README.md
 ```
 
-La base de datos `finanzia.db` se crea sola la primera vez que se abre la app.
+La base de datos (`finanzia.db`) se crea sola la primera vez que abres la app.
 
-## Ejecutarla en el computador
+**Tecnologías:** Python · Streamlit · scikit-learn · pandas · SQLite
+
+---
+
+## 💻 Instalarlo y correrlo en tu computador
+
+**Necesitas:** [Python 3.12](https://www.python.org/downloads/) y [Git](https://git-scm.com/).
+
+**1. Descarga el proyecto**
+
+```bash
+git clone https://github.com/ErickEsquivel/FinazIA.git
+cd FinazIA
+```
+
+**2. Crea un entorno virtual** (recomendado, para no mezclar librerías)
+
+```bash
+python -m venv venv
+```
+
+Actívalo:
+
+- **Windows:** `venv\Scripts\activate`
+- **Mac / Linux:** `source venv/bin/activate`
+
+**3. Instala las librerías**
 
 ```bash
 pip install -r requirements.txt
+```
+
+**4. Ejecuta la app**
+
+```bash
 streamlit run app.py
 ```
 
-Se abre en el navegador (http://localhost:8501).
+Se abrirá sola en tu navegador en **http://localhost:8501**.
 
-## Subirla a Streamlit Community Cloud
+**5. Primeros pasos**
 
-1. Suban la carpeta a un repositorio de GitHub (el `.gitignore` evita subir la base de datos).
-2. En https://share.streamlit.io, elijan **Create app**, el repositorio y `app.py` como archivo principal.
-3. En **Advanced settings**, elijan **Python 3.12**.
-4. Desplieguen.
+1. Escribe tu ingreso mensual aproximado. La app te propone un límite para cada categoría.
+2. Deja marcada la opción **"Cargar movimientos de ejemplo"** si quieres ver la app con datos.
+3. Ve a **Registrar movimiento**, escribe un gasto y mira cómo lo clasifica la IA.
 
-**Importante:** en Streamlit Cloud el archivo SQLite se borra cada vez que la app
-se reinicia o se vuelve a desplegar. Para un prototipo está bien; antes de la
-sustentación usen el botón de datos de ejemplo (en la bienvenida o en
-Presupuesto → Opciones del prototipo).
+> Para empezar de cero, ve a **Presupuesto → Opciones del prototipo → Reiniciar prototipo**.
 
-## Las 4 ideas y dónde están en el código
+---
 
-| Idea | Qué hace | Dónde |
-|---|---|---|
-| 1. Alertas al registrar | Al elegir la categoría, dice cuánto del límite queda o si se pasó | `analisis.alerta_registro`, pantalla Registrar |
-| 2. Gastos hormiga | Cantidad, total, proyección mensual y anual, los más repetidos, hora del día | `analisis.analisis_hormiga`, Panel |
-| 3. Regla 50/30/20 | Agrupa las categorías en necesidades, deseos y ahorro y da un consejo | `analisis.regla_50_30_20`, Panel |
-| 4. Gasto inusual | Compara el monto con el de los 5 vecinos del KNN; también avisa si no reconoce ninguna palabra | `MotorIA._revisar_atipico`, Registrar y Panel |
+## 🚧 Limitaciones del prototipo
 
-Extras:
-- **Explicación**: al registrar, se muestran los 5 vecinos que usó la IA.
-- **Confianza baja**: si la categoría ganadora tiene menos del 60% de los votos, la app pide al usuario elegir.
-- **Aprendizaje**: cada movimiento guardado o corregido se agrega al "mapa" del KNN sin reentrenar el TF-IDF.
-- **Precisión real**: en Historial se ve qué porcentaje de veces el usuario no tuvo que corregir a la IA.
-- **Tildes**: el TF-IDF del `.pkl` distingue "cafe" de "café". Sin reentrenar,
-  `MotorIA.normalizar_descripcion` cambia cada palabra que el modelo no conoce por su
-  versión con (o sin) tilde que sí está en el vocabulario, antes de predecir y aprender.
-  La descripción se guarda tal como la escribió el usuario.
+- El modelo se entrenó con **560 ejemplos**; puede equivocarse con descripciones poco comunes.
+- Solo aprende **palabras nuevas** si se vuelve a entrenar; mientras tanto, se guía por el monto y la hora.
+- Está pensada para **un solo usuario**: no tiene cuentas ni inicio de sesión.
+- Los montos están en **pesos colombianos (COP)** y la hora es la de Colombia.
 
-## Nota sobre la función `extraer_variables_temporales`
+---
 
-El `.pkl` guarda solo el **nombre** de esta función de su notebook, no su código.
-Por eso está reescrita en `modelo_ia.py`. Se reconstruyó revisando los datos
-guardados dentro del modelo; devuelve 4 columnas:
+<details>
+<summary>🔧 Notas técnicas (para desarrolladores)</summary>
 
-- `hora` (0 a 23)
-- `dia_semana` (0 = lunes ... 6 = domingo)
-- `dia_mes` (1 a 31)
-- `es_fin_de_semana` (1 si es viernes, sábado o domingo)
+- **`extraer_variables_temporales`:** el `.pkl` guarda solo el *nombre* de esta función,
+  no su código, así que está reescrita en `modelo_ia.py`. Devuelve `hora`, `dia_semana`
+  (0 = lunes), `dia_mes` y `es_fin_de_semana` (1 = viernes, sábado o domingo). Se
+  verificó contra los datos guardados dentro del modelo.
+- **Tildes:** el TF-IDF del modelo distingue "cafe" de "café". `MotorIA.normalizar_descripcion`
+  cambia cada palabra desconocida por su versión con (o sin) tilde que sí está en el
+  vocabulario. La descripción se guarda tal como la escribió el usuario.
+- **Versión de scikit-learn:** si vuelven a entrenar el modelo, guárdenlo con la misma
+  versión que aparece en `requirements.txt` (1.9.1).
+- **Datos de ejemplo:** `datos_demo.py` ajusta los montos para que cada categoría quede
+  en el 50% de su límite, según el presupuesto del usuario.
+- **Streamlit Community Cloud:** se despliega con `app.py` como archivo principal y
+  Python 3.12. El archivo SQLite se borra cada vez que la app se reinicia.
 
-Si en el notebook la función hacía algo distinto, cópienla tal cual en `modelo_ia.py`.
-
-Si vuelven a entrenar el modelo, guárdenlo con la misma versión de scikit-learn
-que aparece en `requirements.txt` (1.9.1), o cambien esa versión.
+</details>
