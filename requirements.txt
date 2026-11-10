@@ -1,4 +1,5 @@
-streamlit>=1.40
+streamlit>=1.60
+altair>=5
 scikit-learn==1.9.1
 numpy>=2.0
 scipy

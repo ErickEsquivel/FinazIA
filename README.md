@@ -56,7 +56,11 @@ descripción, el monto, el tipo y la fecha y hora, y deja que "voten" por una ca
 
 ```
 finanzia/
-├── app.py                                   # Interfaz: las pantallas de la app (Streamlit)
+├── app.py                                   # Arranque: tema, datos y navegación (Streamlit)
+├── vistas/                                  # Pantallas: bienvenida, inicio, registrar, movimientos, presupuesto
+├── ui/                                      # Estilos, componentes, gráficos (Altair) y acceso a datos
+├── assets/logo.svg                          # Logo de la app
+├── .streamlit/config.toml                   # Tema claro y oscuro
 ├── modelo_ia.py                             # La IA: predicción, vecinos, gastos inusuales y aprendizaje
 ├── analisis.py                              # Cálculos: presupuesto, gastos hormiga, regla 50/30/20
 ├── base_datos.py                            # Base de datos SQLite (movimientos y presupuestos)

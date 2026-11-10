@@ -11,8 +11,11 @@ No necesita instalar ningún servidor: viene incluido con Python.
 import sqlite3
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pandas as pd
+
+ZONA = ZoneInfo("America/Bogota")
 
 # Ruta del archivo de la base de datos (queda en la misma carpeta del proyecto)
 RUTA_BD = Path(__file__).parent / "finanzia.db"
@@ -132,7 +135,8 @@ def leer_presupuestos() -> dict:
 # Movimientos
 # ----------------------------------------------------------------------------
 def _ahora_texto():
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    """Hora de Colombia, igual que el resto de la app."""
+    return datetime.now(ZONA).strftime("%Y-%m-%d %H:%M:%S")
 
 
 def guardar_movimiento(fecha_hora, monto, tipo, descripcion, categoria_ia,
@@ -166,6 +170,20 @@ def corregir_categoria(id_movimiento, nueva_categoria):
         )
 
 
+def actualizar_movimiento(id_movimiento, fecha_hora, monto, descripcion, categoria_final,
+                          atipico, motivo_atipico):
+    """Edita un movimiento existente (la categoría propuesta por la IA no cambia)."""
+    with conectar() as con:
+        con.execute(
+            """UPDATE movimientos
+               SET fecha_hora = ?, monto = ?, descripcion = ?, categoria_final = ?,
+                   atipico = ?, motivo_atipico = ?, actualizado_en = ?
+               WHERE id = ?""",
+            (fecha_hora, float(monto), descripcion.strip(), categoria_final,
+             int(bool(atipico)), motivo_atipico, _ahora_texto(), int(id_movimiento)),
+        )
+
+
 def eliminar_movimiento(id_movimiento):
     with conectar() as con:
         con.execute("DELETE FROM movimientos WHERE id = ?", (int(id_movimiento),))
@@ -179,7 +197,8 @@ def version_datos():
     with conectar() as con:
         fila = con.execute(
             "SELECT COUNT(*) AS n, "
-            "COALESCE(GROUP_CONCAT(id || ':' || categoria_final, '|'), '') AS sello "
+            "COALESCE(GROUP_CONCAT(id || ':' || categoria_final || ':' || monto || ':' "
+            "|| fecha_hora || ':' || descripcion, '|'), '') AS sello "
             "FROM movimientos"
         ).fetchone()
     return (fila["n"], hash(fila["sello"]))
