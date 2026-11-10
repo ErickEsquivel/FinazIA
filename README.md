@@ -54,6 +54,10 @@ Extras:
 - **Confianza baja**: si la categoría ganadora tiene menos del 60% de los votos, la app pide al usuario elegir.
 - **Aprendizaje**: cada movimiento guardado o corregido se agrega al "mapa" del KNN sin reentrenar el TF-IDF.
 - **Precisión real**: en Historial se ve qué porcentaje de veces el usuario no tuvo que corregir a la IA.
+- **Tildes**: el TF-IDF del `.pkl` distingue "cafe" de "café". Sin reentrenar,
+  `MotorIA.normalizar_descripcion` cambia cada palabra que el modelo no conoce por su
+  versión con (o sin) tilde que sí está en el vocabulario, antes de predecir y aprender.
+  La descripción se guarda tal como la escribió el usuario.
 
 ## Nota sobre la función `extraer_variables_temporales`
 

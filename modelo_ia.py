@@ -12,7 +12,9 @@ Aquí vive la IA. Este archivo:
    puntos nuevos al mapa).
 """
 
+import re
 import sys
+import unicodedata
 
 import joblib
 import numpy as np
@@ -63,13 +65,21 @@ def cargar_pipeline(ruta_modelo):
     return joblib.load(ruta_modelo)
 
 
-def _a_tabla(fechas, montos, tipos, descripciones):
-    """Arma la tabla con las 4 columnas exactas que espera el modelo."""
+def quitar_tildes(texto: str) -> str:
+    """'Odontología' -> 'odontologia', 'año' -> 'ano'."""
+    descompuesto = unicodedata.normalize("NFKD", texto.lower())
+    return "".join(c for c in descompuesto if not unicodedata.combining(c))
+
+
+def _a_tabla(fechas, montos, tipos, descripciones, normalizar=lambda t: t):
+    """Arma la tabla con las 4 columnas exactas que espera el modelo.
+    `normalizar` corrige la descripción (por ejemplo, las tildes) antes de que
+    la vea el modelo; lo que se guarda en la base de datos no cambia."""
     return pd.DataFrame({
         "fecha_hora": [pd.Timestamp(f).strftime("%Y-%m-%d %H:%M:%S") for f in fechas],
         "monto": [float(m) for m in montos],
         "tipo_movimiento": list(tipos),
-        "descripcion_libre": [" ".join(str(d).split()) for d in descripciones],
+        "descripcion_libre": [normalizar(" ".join(str(d).split())) for d in descripciones],
     })
 
 
@@ -91,6 +101,7 @@ class MotorIA:
         tfidf = self.preprocesador.named_transformers_["texto"]
         self.vocabulario = tfidf.get_feature_names_out()
         self.col_texto = self.X_base.shape[1] - len(self.vocabulario)  # = 6
+        self._preparar_tildes(tfidf)
         pesos = self.preprocesador.transformer_weights
         self.peso_tiempo, self.peso_monto, self.peso_tipo = pesos["tiempo"], pesos["numero"], pesos["tipo"]
         self.esc_tiempo = self.preprocesador.named_transformers_["tiempo"].named_steps["escalador_tiempo"]
@@ -99,6 +110,29 @@ class MotorIA:
         # Movimientos del usuario que ya forman parte del "mapa"
         self.mov_usuario = pd.DataFrame()
         self.version = None
+
+    # ------------------------------------------------------------------
+    # Tildes: el TF-IDF se entrenó sin quitar tildes, así que "cafe" y "café"
+    # son palabras distintas para él. En vez de reentrenar, se "traduce" cada
+    # palabra que el modelo no conoce a la forma que sí conoce.
+    # ------------------------------------------------------------------
+    def _preparar_tildes(self, tfidf):
+        self._palabras_conocidas = set(tfidf.vocabulary_)
+        candidatas = {}  # "cafe" -> [(idf, "café"), ...]
+        for palabra, j in tfidf.vocabulary_.items():
+            if " " not in palabra:  # solo palabras sueltas; los bigramas se arman solos
+                candidatas.setdefault(quitar_tildes(palabra), []).append((tfidf.idf_[j], palabra))
+        # Si varias palabras quedan iguales sin tilde, se usa la más común (menor idf)
+        self._sin_tilde_a_vocabulario = {clave: min(opciones)[1] for clave, opciones in candidatas.items()}
+
+    def normalizar_descripcion(self, texto: str) -> str:
+        """'pague cafe en la cafeteria' -> 'pague café en la cafetería' (según el vocabulario)."""
+        def reemplazar(m):
+            palabra = m.group(0).lower()
+            if palabra in self._palabras_conocidas:
+                return palabra
+            return self._sin_tilde_a_vocabulario.get(quitar_tildes(palabra), palabra)
+        return re.sub(r"\w+", reemplazar, texto)
 
     # ------------------------------------------------------------------
     # Aprendizaje: agrega al mapa los movimientos confirmados por el usuario
@@ -112,7 +146,8 @@ class MotorIA:
         else:
             movimientos = movimientos.reset_index(drop=True)
             tabla = _a_tabla(movimientos["fecha_hora"], movimientos["monto"],
-                             movimientos["tipo_movimiento"], movimientos["descripcion"])
+                             movimientos["tipo_movimiento"], movimientos["descripcion"],
+                             self.normalizar_descripcion)
             X_usuario = sp.csr_matrix(self.preprocesador.transform(tabla))
             X = sp.vstack([self.X_base, X_usuario]).tocsr()
             y = np.concatenate([self.y_base, movimientos["categoria_final"].to_numpy()])
@@ -128,7 +163,7 @@ class MotorIA:
     # Predicción
     # ------------------------------------------------------------------
     def predecir(self, fecha_hora, monto, tipo, descripcion) -> dict:
-        tabla = _a_tabla([fecha_hora], [monto], [tipo], [descripcion])
+        tabla = _a_tabla([fecha_hora], [monto], [tipo], [descripcion], self.normalizar_descripcion)
         x = sp.csr_matrix(self.preprocesador.transform(tabla))
 
         # Votos de los 5 vecinos (pesados por cercanía) para cada categoría
